@@ -6,14 +6,9 @@
     <title>Cuenta Regresiva: Nuevo Pase de Batalla CODM</title>
 
     <link rel="icon" href="favicon.png" type="image/png">
-<meta name="google-site-verification" content="XGvEexs69LaLCfGQkc4VPwAUDI-AXCjBEP-5wWSIc9M" />
 
-    <meta name="description" content="Cuenta regresiva oficial para la Nueva Temporada de Call of Duty Mobile. Mira cuánto falta para el Pase de Batalla.">
-    <meta name="keywords" content="Call of Duty Mobile, CODM Temporada, cuando sale pase de batalla codm, cuenta regresiva, filtraciones codm">
-    <meta property="og:title" content="🚨 Cuenta Regresiva: Nueva Temporada CODM">
-    <meta property="og:description" content="Mira el tiempo exacto restante para la actualización.">
-    <meta property="og:type" content="website">
-
+    <meta name="description" content="Portal de noticias de Call of Duty Mobile. Cuenta regresiva para la temporada, filtraciones de skins, mejores clases y guías de rango.">
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-500Y1SE1CM"></script>
@@ -21,12 +16,10 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-500Y1SE1CM');
     </script>
 
     <style>
-        /* ESTILO TÁCTICO / MILITAR */
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;700&display=swap');
 
         body {
@@ -37,10 +30,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            
-            /* TU FONDO ACTUAL */
+            /* TU FONDO */
             background-image: url('police-1282330_1280.jpg');
             background-size: cover;
             background-position: center;
@@ -52,32 +43,28 @@
             padding: 20px;
             max-width: 800px;
             width: 100%;
+            background: rgba(0,0,0,0.6); /* Un poco de oscuridad para leer mejor */
         }
 
         h1 {
             font-family: 'Black Ops One', cursive;
             font-size: 3rem;
-            color: #ffaa00; /* Amarillo Oro */
+            color: #ffaa00;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 10px;
             text-shadow: 0 0 15px rgba(255, 170, 0, 0.6);
         }
 
-        p.subtitle {
-            font-size: 1.2rem;
-            color: #aaaaaa;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
+        p.subtitle { font-size: 1.2rem; color: #aaaaaa; margin-bottom: 40px; text-transform: uppercase; }
 
+        /* RELOJ */
         .countdown-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin-bottom: 40px;
         }
-
         .time-box {
             background: rgba(255, 255, 255, 0.05);
             border: 2px solid #333;
@@ -86,54 +73,55 @@
             border-radius: 4px;
             backdrop-filter: blur(5px);
         }
+        .number { display: block; font-family: 'Black Ops One', cursive; font-size: 3.5rem; color: #ffffff; }
+        .label { font-size: 0.9rem; color: #ffaa00; text-transform: uppercase; font-weight: bold; }
 
-        .number {
-            display: block;
-            font-family: 'Black Ops One', cursive;
-            font-size: 3.5rem;
-            color: #ffffff;
+        /* BOTONES DE NAVEGACIÓN (Estilo Tarjeta) */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
         }
 
-        .label {
-            font-size: 0.9rem;
-            color: #ffaa00;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        /* Botón CTA hacia la página de filtraciones */
-        .btn-update {
-            background-color: #ffaa00;
-            color: #000;
-            padding: 15px 30px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .nav-card {
+            background: #111;
+            border: 1px solid #444;
+            padding: 20px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 20px;
-            border: 1px solid #ffcc00;
+            color: white;
+            transition: 0.3s;
         }
+        .nav-card:hover { border-color: #ffaa00; transform: translateY(-3px); }
+        .nav-title { color: #ffaa00; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 5px; }
+        .nav-desc { font-size: 0.85rem; color: #999; }
 
-        .btn-update:hover {
-            background-color: #ffcc00;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
-            transform: scale(1.05);
+        /* TEXTO SEO */
+        .content-box {
+            text-align: left; 
+            color: #ccc; 
+            line-height: 1.8; 
+            font-size: 1rem; 
+            background: #111; 
+            padding: 30px; 
+            border-radius: 10px; 
+            border: 1px solid #333;
+            margin-bottom: 30px;
         }
 
         .ad-container {
-            width: 100%;
-            height: 100px;
-            background-color: #111;
-            border: 1px dashed #444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            color: #555;
-            font-size: 0.8rem;
+            width: 100%; height: 100px; background-color: #111; border: 1px dashed #444;
+            display: flex; align-items: center; justify-content: center; margin: 20px 0; color: #555;
         }
+
+        /* FOOTER SERIO */
+        footer {
+            margin-top: 50px; padding: 40px 20px; font-size: 0.9rem; color: #666; 
+            border-top: 1px solid #333; background: #000; width: 100%; box-sizing: border-box;
+        }
+        footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: #ffaa00; }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
@@ -141,7 +129,6 @@
             .number { font-size: 2.5rem; }
         }
     </style>
-    
 </head>
 <body>
 
@@ -149,7 +136,7 @@
         <div class="ad-container">ESPACIO ADSENSE (BANNER SUPERIOR)</div>
 
         <h1>Nueva Temporada</h1>
-        <p class="subtitle">Cuenta regresiva para el Pase de Batalla</p>
+        <p class="subtitle">Cuenta regresiva oficial para CODM</p>
 
         <div class="countdown-grid">
             <div class="time-box"><span class="number" id="days">00</span><span class="label">Días</span></div>
@@ -158,50 +145,66 @@
             <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Segs</span></div>
         </div>
 
-        <div style="max-width: 800px; margin: 40px auto; text-align: left; color: #ccc; line-height: 1.8; font-size: 1rem; background: #111; padding: 30px; border-radius: 10px; border: 1px solid #333;">
-            <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis de la Temporada Actual de Call of Duty Mobile</h2>
-            <p>
-                La comunidad global de <strong>Call of Duty Mobile (CODM)</strong> se encuentra en un momento decisivo. Con el cierre de la temporada actual, las expectativas sobre el nuevo <strong>Pase de Batalla</strong> están más altas que nunca. Nuestra herramienta de cuenta regresiva en tiempo real está diseñada para sincronizarse con los servidores globales (UTC) y ofrecer a los jugadores de Latinoamérica y España la precisión exacta del reinicio de rango.
-            </p>
-            
-            <h3 style="color: #fff;">¿Qué podemos esperar de la próxima actualización?</h3>
-            <p>
-                Según las últimas filtraciones confirmadas por dataminers, la próxima temporada traerá cambios significativos en el "meta" de las armas. Se espera que fusiles de asalto como la <strong>Kilo 141</strong> y subfusiles como la <strong>Fennec</strong> reciban ajustes de equilibrio. Además, el regreso de mapas clásicos de la franquicia Modern Warfare está casi asegurado.
-            </p>
+        <div class="nav-grid">
+            <a href="filtraciones.html" class="nav-card">
+                <span class="nav-title">🔥 Filtraciones</span>
+                <span class="nav-desc">Videos y noticias del nuevo Pase de Batalla.</span>
+            </a>
+            <a href="clases.html" class="nav-card">
+                <span class="nav-title">🔫 Mejores Clases</span>
+                <span class="nav-desc">Meta actual: Accesorios para BP50 y más.</span>
+            </a>
+            <a href="guias.html" class="nav-card">
+                <span class="nav-title">📚 Guías de Juego</span>
+                <span class="nav-desc">Consejos para subir a Rango Leyenda.</span>
+            </a>
+        </div>
 
-            <h3 style="color: #fff;">Nuevas Armas Míticas y Legendarias</h3>
+        <div class="content-box">
+            <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis y Noticias de Call of Duty Mobile</h2>
             <p>
-                El sistema de sorteos "Lucky Draws" se renovará con skins reactivas que evolucionan con las bajas. Mantenerse informado sobre estas fechas es crucial para aquellos jugadores que desean administrar sus CP (COD Points) de manera eficiente. En <strong>CODM Contador</strong>, no solo rastreamos el tiempo, sino que analizamos qué contenido vale realmente la pena adquirir.
+                Bienvenidos a <strong>CODM Contador</strong>, el portal dedicado a la comunidad hispana de Call of Duty Mobile. Nuestro objetivo es proporcionar información precisa y en tiempo real sobre el ciclo de actualizaciones del juego.
             </p>
-            
-            <p style="font-size: 0.9rem; color: #888; border-top: 1px solid #444; padding-top: 10px; margin-top: 20px;">
-                <em>Este sitio es una fuente de información independiente y no está afiliado con Activision. Todas las marcas registradas pertenecen a sus respectivos dueños.</em>
+            <h3 style="color: #fff;">¿Por qué usar nuestro contador?</h3>
+            <p>
+                Los servidores de Activision operan en horario UTC, lo que a menudo causa confusión en jugadores de Latinoamérica y España. Nuestra herramienta sincroniza automáticamente el tiempo restante para el reinicio de rango, eventos de temporada y lanzamientos de nuevas armas míticas.
+            </p>
+            <h3 style="color: #fff;">Contenido Editorial</h3>
+            <p>
+                Además del seguimiento temporal, nuestro equipo de editores analiza el "Meta" (Most Effective Tactic Available) tras cada parche. Visita nuestra sección de <strong>Mejores Clases</strong> para ver las configuraciones optimizadas por jugadores profesionales.
             </p>
         </div>
 
-        <a href="filtraciones.html" class="btn-update">Ver Filtraciones del Pase</a>
-
-<a href="guias.html" class="btn-update" style="background-color: #333; border-color: #ccc; color: #fff; margin-left: 10px;">
-    📚 Guía para subir a Leyenda
-</a>
-
-        <a href="clases.html" class="btn-update" style="background-color: #00d4ff; border-color: #00d4ff; color: #000; margin-left: 10px;">
-            Ver Mejores Clases META
+   <a href="https://www.facebook.com/groups/callofdutylatinoamericacodm/?ref=share&mibextid=NSMWBT" target="_blank" style="background-color: #1877F2; border: 1px solid #1877F2; color: #fff; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);">
+            👥 Unirme al Grupo de Facebook
         </a>
-        <div style="margin-top: 100px; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
-            <h3 style="color: #ffaa00; font-family: 'Black Ops One'; margin-bottom: 20px;">📊 Votación Semanal</h3>
-           
-            <div class="strawpoll-embed" id="strawpoll_wAg3QXo58y8" style="height: 608px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
-                <iframe title="StrawPoll Embed" id="strawpoll_iframe_wAg3QXo58y8" src="https://strawpoll.com/embed/wAg3QXo58y8" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe>
-                <script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"></script>
+
+        <div style="margin-bottom: 50px;">
+            <h3 style="color: #ffaa00; font-family: 'Black Ops One';">📊 Votación Semanal</h3>
+            <div class="strawpoll-embed" id="strawpoll_wAg3QXo58y8" style="height: 400px; max-width: 600px; width: 100%; margin: 0 auto;">
+                <iframe title="StrawPoll Embed" id="strawpoll_iframe_wAg3QXo58y8" src="https://strawpoll.com/embed/wAg3QXo58y8" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
             </div>
         </div>
 
        <div class="ad-container">ESPACIO ADSENSE (BANNER INFERIOR)</div>
     </div>
 
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h4 style="color: #ffaa00; margin-bottom: 10px;">Sobre CODM Contador</h4>
+            <p style="margin-bottom: 20px;">Somos un sitio web creado por fans para fans. No estamos afiliados con Activision ni TiMi Studios. Nuestro propósito es informar y ayudar a la comunidad a mejorar su nivel de juego.</p>
+            
+            <div style="border-top: 1px solid #333; padding-top: 20px;">
+                <a href="privacidad.html">Política de Privacidad</a> | 
+                <a href="mailto:contacto@codmcontador.com">Contacto</a> |
+                <a href="guias.html">Guías</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <script>
-        // CAMBIA ESTA FECHA POR LA DEL PRÓXIMO PASE
+        // FECHA DEL PASE (Cámbiala cuando quieras)
         const releaseDate = new Date("December 15, 2025 17:00:00").getTime();
 
         function updateTimer() {
@@ -225,13 +228,5 @@
         }
         setInterval(updateTimer, 1000);
     </script>
-    
-    <footer style="margin-top: 50px; padding: 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #333;">
-        <p>© 2025 CODM Contador - Fan Site no oficial.</p>
-        <p>
-            <a href="privacidad.html" style="color: #888; text-decoration: none;">Política de Privacidad</a> | 
-            <a href="mailto:contacto@codmcontador.com" style="color: #888; text-decoration: none;">Contacto</a>
-        </p>
-    </footer>
 </body>
 </html>
