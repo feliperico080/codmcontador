@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía: Cómo llegar a LEYENDA en CODM (2025)</title>
-    <meta name="description" content="Guía definitiva para subir de rango en Call of Duty Mobile. Consejos, modos de juego y configuración.">
+    <title>Guía Maestra: Camino a Leyenda - CODM</title>
+    <meta name="description" content="Guía completa de Call of Duty Mobile. Aprende movimientos pro (Slide Cancel), configura tu HUD de 4 dedos y domina los respawns en Hardpoint.">
+    <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-500Y1SE1CM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,40 +16,175 @@
       gtag('config', 'G-500Y1SE1CM');
     </script>
 
-    <link rel="icon" href="favicon.png" type="image/png">
-
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #0d0d0d; color: #ccc; margin: 0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; background: #161616; padding: 30px; border-radius: 10px; border: 1px solid #333; }
-        h1, h2 { color: #ffaa00; font-family: 'Arial Black', sans-serif; text-transform: uppercase; }
-        h1 { border-bottom: 2px solid #ffaa00; padding-bottom: 10px; }
-        .tip-box { background: #222; border-left: 4px solid #00d4ff; padding: 15px; margin: 20px 0; }
-        .btn-back { display: block; width: 200px; margin: 40px auto; text-align: center; padding: 15px; border: 2px solid #ffaa00; color: #ffaa00; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-        .btn-back:hover { background: #ffaa00; color: #000; }
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #ccc;
+            margin: 0;
+            padding: 20px;
+            background-image: url('police-1282330_1280.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; background: rgba(0,0,0,0.9); padding: 40px; border-radius: 10px; border: 1px solid #333; }
+
+        h1 { color: #ffaa00; font-family: 'Black Ops One'; font-size: 2.5rem; text-align: center; margin-bottom: 10px; text-transform: uppercase; }
+        .subtitle { text-align: center; color: #fff; margin-bottom: 40px; font-size: 1.1rem; }
+
+        /* ÍNDICE DE CONTENIDOS */
+        .toc {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ffaa00;
+            margin-bottom: 50px;
+        }
+        .toc h3 { margin-top: 0; color: #fff; }
+        .toc ul { list-style: none; padding: 0; }
+        .toc li { margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .toc a { color: #ffaa00; text-decoration: none; font-weight: bold; }
+        .toc a:hover { color: #fff; }
+
+        /* SECCIONES */
+        .guide-section { margin-bottom: 60px; }
+        h2 { color: #fff; font-family: 'Black Ops One'; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0; }
+        
+        /* CAJA DE CONSEJO PRO */
+        .pro-tip {
+            background: linear-gradient(45deg, #222, #111);
+            border: 1px solid #00d4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .pro-tip::before {
+            content: "💡 CONSEJO PRO";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #00d4ff;
+            color: #000;
+            padding: 2px 10px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        /* TEXTO RESALTADO */
+        strong { color: #fff; }
+
+        .btn-back {
+            display: block; width: 200px; margin: 50px auto; text-align: center; 
+            padding: 15px; background: #ffaa00; color: #000; 
+            text-decoration: none; font-weight: bold; border-radius: 50px; 
+            transition: 0.3s;
+        }
+        .btn-back:hover { transform: scale(1.05); box-shadow: 0 0 15px #ffaa00; }
+
+        /* IMAGEN PLACEHOLDER (CSS) */
+        .visual-box {
+            width: 100%;
+            height: 150px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            border: 1px dashed #444;
+            margin: 20px 0;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cómo subir a Rango Leyenda</h1>
-        <p>Alcanzar el rango de <strong>Leyenda (Legendary)</strong> en Call of Duty Mobile es el objetivo principal de cualquier jugador competitivo. No se trata solo de tener buena puntería, sino de estrategia, conocimiento del mapa y configuración. Aquí te dejamos los 3 pilares fundamentales para subir rápido esta temporada.</p>
 
-        <h2>1. Domina el "Game Sense"</h2>
-        <p>El error número uno de los novatos es correr sin pensar. En rangos altos (Gran Maestro y Leyenda), conocer los "Spawns" (puntos de reaparición) es vital. Si presionas demasiado en el mapa enemigo, los rivales aparecerán detrás de tu equipo, causando una derrota inminente. Juega el objetivo, no solo las kills.</p>
+<div class="container">
+    <h1>Academia CODM</h1>
+    <p class="subtitle">La guía definitiva para dejar de ser novato y alcanzar el Rango Leyenda en 2025.</p>
 
-        <div class="tip-box">
-            <strong>Consejo Pro:</strong> Utiliza el minimapa constantemente. Si ves que tus compañeros desaparecen de una zona, es porque hay enemigos ahí. Usa UAV siempre que puedas.
-        </div>
-
-        <h2>2. Configuración y Sensibilidad</h2>
-        <p>No copies la sensibilidad de los YouTubers. Cada dispositivo tiene una respuesta táctil diferente. Lo ideal es usar la <strong>"Velocidad Fija"</strong> para crear memoria muscular. Dedica 10 minutos al día en el campo de entrenamiento probando el retroceso de armas meta como la BP50 o la Kilo 141.</p>
-
-        <h2>3. Juega con Cabeza (Modos de Juego)</h2>
-        <p>Para subir puntos rápido, evita "Duelo por Equipos" ya que da pocos puntos. Enfócate en <strong>Punto Caliente (Hardpoint)</strong> y <strong>Dominio</strong>. Estos modos premian más por jugar el objetivo y permiten hacer más bajas predecibles.</p>
-
-        <br>
-        <p>Sigue estos consejos y verás cómo sales de Maestro en menos de una semana. ¡Nos vemos en el campo de batalla!</p>
-
-        <a href="index.html" class="btn-back">« Volver al Inicio</a>
+    <div class="toc">
+        <h3>📖 Índice de la Lección</h3>
+        <ul>
+            <li><a href="#sec1">1. Configuración: HUD y Sensibilidad</a></li>
+            <li><a href="#sec2">2. Movimiento Avanzado: El Slide Cancel</a></li>
+            <li><a href="#sec3">3. Game Sense: Rotaciones y Spawns</a></li>
+            <li><a href="#sec4">4. Mentalidad Competitiva</a></li>
+        </ul>
     </div>
+
+    <div id="sec1" class="guide-section">
+        <h2>1. Configuración: HUD y Sensibilidad</h2>
+        <p>
+            Muchos jugadores se estancan en Maestro porque siguen jugando a dos dedos (pulgares). Para competir contra jugadores de Leyenda, necesitas dominar el <strong>HUD de 3 o 4 dedos (Claw)</strong>.
+        </p>
+        <p>
+            Esto te permite realizar tres acciones simultáneas vitales: <strong>Moverte + Apuntar + Disparar</strong> al mismo tiempo. Si juegas a dos dedos, tienes que dejar de apuntar para poder moverte, y en ese milisegundo, mueres.
+        </p>
+
+        <div class="pro-tip">
+            <strong>Configuración de Sensibilidad:</strong><br>
+            No uses "Aceleración de Distancia". Cambia a <strong>"Velocidad Fija"</strong>. Esto hará que tu memoria muscular se desarrolle más rápido, ya que el giro siempre será consistente sin importar qué tan rápido muevas el dedo.
+        </div>
+    </div>
+
+    <div id="sec2" class="guide-section">
+        <h2>2. Movimiento Avanzado: Slide Cancel</h2>
+        <p>
+            Correr en línea recta es una sentencia de muerte. El movimiento más importante en CODM es el <strong>Slide Cancel (Deslizar y Cancelar)</strong>.
+        </p>
+        <p>
+            <strong>¿Cómo se hace?</strong>
+            <br>
+            La secuencia es: <em>Deslizar ➔ Apuntar (inmediatamente) ➔ Disparar</em>.
+        </p>
+        <p>
+            Esto no solo te hace un objetivo más difícil, sino que "rompe" la cámara del enemigo (Peeker's Advantage), haciéndote ver en su pantalla unas milésimas de segundo después de que tú ya lo viste a él.
+        </p>
+        
+    </div>
+
+    <div id="sec3" class="guide-section">
+        <h2>3. Game Sense: Rotaciones y Spawns</h2>
+        <p>
+            Tener buena puntería no sirve de nada si no sabes dónde están los enemigos. En el modo <strong>Punto Caliente (Hardpoint)</strong>, el secreto es la "Rotación Temprana".
+        </p>
+        <p>
+            Cuando falten <strong>15 segundos</strong> para que acabe el punto actual, deja de pelear y corre hacia el siguiente.
+        </p>
+        
+        <div style="margin: 30px 0; text-align: center;">
+    <img src="images.jpg" alt="Diagrama de spawns en Nuketown Hardpoint" style="width: 100%; max-width: 600px; border-radius: 8px; border: 2px solid #333;">
+    <p style="color: #888; font-size: 0.9rem; margin-top: 10px;"><em>Fig 1. Posicionamiento del "Ancla" para controlar reapariciones.</em></p>
+</div>
+
+        <div class="pro-tip">
+            <strong>Regla de Oro del Ancla (Anchor):</strong><br>
+            En cada equipo debe haber un jugador que NO entra al punto, sino que se queda en una esquina del mapa protegiendo el "Spawn" (reaparición) para que sus compañeros sigan apareciendo cerca del objetivo al morir.
+        </div>
+    </div>
+
+    <div id="sec4" class="guide-section">
+        <h2>4. Mentalidad Competitiva</h2>
+        <p>
+            Llegar a Leyenda es 40% habilidad y 60% mentalidad. Si pierdes dos partidas seguidas, <strong>deja de jugar por 15 minutos</strong>.
+        </p>
+        <p>
+            El sistema de emparejamiento (SBMM) a veces te pondrá en equipos difíciles adrede. Jugar tilteado (enojado) solo hará que pierdas más puntos. Juega para mejorar, no solo para ganar puntos, y el rango subirá solo.
+        </p>
+    </div>
+
+    <hr style="border-color: #333;">
+    <p style="text-align: center; margin-top: 30px;">
+        <em>¿Te sirvió esta guía? Compártela con tu escuadra.</em>
+    </p>
+
+    <a href="index.html" class="btn-back">« Volver al Inicio</a>
+</div>
+
 </body>
 </html>
