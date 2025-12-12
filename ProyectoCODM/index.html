@@ -33,14 +33,13 @@
             color: #e0e0e0;
             margin: 0;
             padding: 0;
-            /* TU FONDO ORIGINAL */
             background-image: url('police-1282330_1280.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        /* BARRA DE NAVEGACIÓN (NUEVO) */
+        /* BARRA DE NAVEGACIÓN */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -54,7 +53,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center; /* Centrado */
+            justify-content: center;
             align-items: center;
             padding: 0 20px;
         }
@@ -67,7 +66,7 @@
             padding: 0 20px;
         }
 
-        /* SECCIÓN HÉROE (RELOJ MEJORADO) */
+        /* HÉROE (RELOJ) */
         .hero-section {
             text-align: center;
             background: rgba(0,0,0,0.7);
@@ -113,13 +112,11 @@
             border-radius: 8px;
             position: relative;
         }
-        .time-box::after { /* Barra decorativa */
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--primary);
-        }
+        .time-box::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--primary); }
         .number { display: block; font-family: 'Black Ops One'; font-size: 2.5rem; color: #fff; }
         .label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* SECCIÓN DIDÁCTICA (INTEL) */
+        /* INTEL DE TEMPORADA */
         .intel-box {
             background: var(--card-bg);
             border-left: 4px solid var(--primary);
@@ -130,7 +127,7 @@
         .intel-title { font-family: 'Black Ops One'; color: #fff; margin-top: 0; display: flex; align-items: center; gap: 10px; }
         .intel-text { line-height: 1.6; color: #ccc; }
 
-        /* GRID DE NAVEGACIÓN (TARJETAS INTERACTIVAS) */
+        /* GRID DE TARJETAS */
         .nav-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -155,7 +152,7 @@
         .card-title { font-family: 'Black Ops One'; font-size: 1.2rem; color: var(--primary); display: block; margin-bottom: 8px; }
         .card-desc { font-size: 0.9rem; color: #999; display: block; }
 
-        /* TEXTO SEO (TU CONTENIDO ORIGINAL) */
+        /* TEXTO SEO */
         .content-box {
             text-align: left; 
             color: #ccc; 
@@ -257,7 +254,7 @@
         </div>
 
         <div style="text-align: center; margin-bottom: 40px;">
-            <a href="https://www.facebook.com/groups/callofdutylatinoamericacodm/?ref=share&mibextid=NSMWBT" target="_blank" style="background-color: #1877F2; border: 1px solid #1877F2; color: #fff; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4); transition: transform 0.2s;">
+            <a href="https://www.facebook.com/" target="_blank" style="background-color: #1877F2; border: 1px solid #1877F2; color: #fff; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4); transition: transform 0.2s;">
                 👥 Unirme al Grupo de Facebook
             </a>
         </div>
@@ -279,7 +276,7 @@
             
             <div style="border-top: 1px solid #333; padding-top: 20px;">
                 <a href="privacidad.html">Política de Privacidad</a> | 
-                <a href="feliperico080@gmail.com">Contacto</a> |
+                <a href="mailto:feliperico080@gmail.com">Contacto</a> |
                 <a href="guias.html">Guías</a>
             </div>
             <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador. Todos los derechos reservados.</p>
@@ -287,18 +284,12 @@
     </footer>
 
     <script>
-        /* CONFIGURACIÓN DEL RELOJ - TEMPORADA 1 (2026)
-           Fecha estimada: 15 de Enero de 2026
-        */
-        
-        // FECHA EXACTA (Formato en Inglés: Mes Día, Año Hora:Minuto:Segundo)
         const releaseDate = new Date("January 15, 2026 19:00:00").getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
             const difference = releaseDate - now;
 
-            // SI LA CUENTA LLEGA A CERO:
             if (difference < 0) {
                 document.querySelector(".countdown-grid").innerHTML = 
                     "<div style='grid-column: span 4; background: #222; padding: 20px; border: 2px solid #ffaa00; border-radius: 10px;'>" +
@@ -319,7 +310,7 @@
             document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
         }
         setInterval(updateTimer, 1000);
-        updateTimer(); // Para que arranque inmediato
+        updateTimer();
     </script>
 </body>
 </html>
