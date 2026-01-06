@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mejores Clases CODM - Meta Diciembre 2025</title>
-    <meta name="description" content="Las mejores clases y accesorios para Call of Duty Mobile Temporada 10/11. Configuración meta para BP50, ISO y Tundra en Rango Leyenda.">
+    <title>Meta Actual S11: Mejores Armas y Clases - CODM Contador</title>
+    
+    <meta name="description" content="Descubre el Meta de la Temporada 11 en Call of Duty Mobile. Las mejores clases para DR-H, Fennec y DL Q33 para llegar a Leyenda.">
     <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
@@ -17,189 +18,241 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;700&display=swap');
+        /* Mismos estilos base del Index para mantener consistencia */
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --primary: #ffaa00;
+            --dark: #0a0a0a;
+            --card-bg: rgba(20, 20, 20, 0.9);
+            --border: #333;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #0d0d0d;
-            color: #ccc;
+            background-color: var(--dark);
+            color: #e0e0e0;
             margin: 0;
-            padding: 20px;
-            background-image: url('police-1282330_1280.jpg'); /* Tu fondo */
+            padding: 0;
+            background-image: url('police-1282330_1280.jpg'); /* Asegúrate de que la imagen exista */
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
         }
 
-        .container { max-width: 900px; margin: 0 auto; }
+        .navbar {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo span { color: var(--primary); }
 
-        /* INTRODUCCIÓN CON TEXTO (Vital para AdSense) */
-        .intro-box {
-            background: rgba(0,0,0,0.85);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #ffaa00;
-            margin-bottom: 40px;
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        h1 { color: #ffaa00; font-family: 'Black Ops One'; font-size: 2.5rem; margin-top: 0; text-transform: uppercase; }
-        h2 { color: #fff; font-family: 'Black Ops One'; margin-top: 0; }
-        p { line-height: 1.6; font-size: 1rem; }
+        /* Estilos específicos para las Clases de Armas */
+        .page-title {
+            font-family: 'Black Ops One';
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+        }
+        
+        .intro-text {
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        /* TARJETAS DE ARMAS */
-        .gun-card {
-            background: #161616;
-            border: 1px solid #333;
+        .loadout-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            margin-bottom: 40px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
         }
-        .gun-card:hover { transform: translateY(-5px); border-color: #ffaa00; }
+        
+        .loadout-card:hover {
+            border-color: var(--primary);
+        }
 
-        .gun-header {
-            background: #222;
-            padding: 15px 25px;
-            border-bottom: 1px solid #333;
+        .weapon-name {
+            font-family: 'Black Ops One';
+            font-size: 1.8rem;
+            color: #fff;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .gun-name { color: #ffaa00; font-family: 'Black Ops One'; font-size: 1.8rem; }
-        .gun-type { background: #333; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-
-        .gun-body { padding: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-
-        /* LISTA DE ACCESORIOS */
-        .attachments { list-style: none; padding: 0; margin: 0; }
-        .attachments li {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 8px;
-            padding: 10px;
+        
+        .weapon-type {
+            font-family: 'Roboto';
+            font-size: 0.9rem;
+            background: #333;
+            padding: 5px 10px;
             border-radius: 4px;
-            border-left: 3px solid #00d4ff; /* Azul Cian */
-            color: #fff;
+            color: var(--primary);
+        }
+
+        .attachments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .attachment-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slot {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
             font-weight: bold;
         }
-        .attachments span { color: #aaa; font-weight: normal; display: block; font-size: 0.85rem; }
-
-        /* TEXTO DE ANÁLISIS */
-        .gun-analysis { color: #bbb; line-height: 1.6; }
-
-        .btn-back {
-            display: block; width: 200px; margin: 50px auto; text-align: center; 
-            padding: 15px; border: 2px solid #ffaa00; color: #ffaa00; 
-            text-decoration: none; font-weight: bold; border-radius: 5px; 
-            text-transform: uppercase; background: #000;
+        
+        .part {
+            color: #fff;
+            font-weight: 500;
         }
-        .btn-back:hover { background: #ffaa00; color: #000; }
 
-        @media (max-width: 700px) {
-            .gun-body { grid-template-columns: 1fr; }
+        .strategy-box {
+            margin-top: 20px;
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
+
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+        footer a { color: #888; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+        </div>
+    </nav>
+
     <div class="container">
-        <div class="intro-box">
-            <h1>Meta Actualizado: Diciembre 2025</h1>
-            <p>
-                La Temporada 11 ha traído cambios significativos al equilibrio de armas en Call of Duty Mobile. 
-                Tras el reciente "nerf" a las escopetas y el ajuste de alcance en los fusiles, el meta se ha estabilizado en torno a la movilidad y la velocidad de apuntado (ADS).
+        <h1 class="page-title">META ACTUAL: TEMPORADA 11</h1>
+        <p class="intro-text">
+            Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas. Si quieres subir a Leyenda en Multijugador, estas son las herramientas que necesitas dominar esta semana.
+        </p>
+
+        <div style="width: 100%; height: 100px; background-color: #111; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #555;">
+            ESPACIO ADSENSE (BANNER)
+        </div>
+
+        <div class="loadout-card">
+            <h2 class="weapon-name">
+                DR-H 
+                <span class="weapon-type">RIFLE DE ASALTO</span>
+            </h2>
+            <div class="strategy-box">
+                <p><strong>¿Por qué está en el Meta?</strong><br>
+                La DR-H sigue siendo la reina del alcance medio gracias a su munición especial OTM. A pesar de los recientes ajustes, su capacidad para eliminar enemigos de 3 disparos en el pecho la convierte en la opción favorita de los jugadores profesionales en modos como Punto Caliente y Dominio.</p>
+            </div>
+            <div class="attachments-grid">
+                <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Tirador OWC</span></div>
+                <div class="attachment-item"><span class="slot">Culata</span><span class="part">Sin Culata</span></div>
+                <div class="attachment-item"><span class="slot">Láser</span><span class="part">Láser Táctico OWC</span></div>
+                <div class="attachment-item"><span class="slot">Munición</span><span class="part">Cargador OTM de 25 balas</span></div>
+                <div class="attachment-item"><span class="slot">Adhesivo</span><span class="part">Adhesivo de Empuñadura Granulado</span></div>
+            </div>
+        </div>
+
+        <div class="loadout-card">
+            <h2 class="weapon-name">
+                FENNEC
+                <span class="weapon-type">SUBFUSIL (SMG)</span>
+            </h2>
+            <div class="strategy-box">
+                <p><strong>Estrategia de Uso:</strong><br>
+                Si tu estilo de juego es agresivo (Rusher), la Fennec es indiscutible. Tiene la cadencia de disparo más alta del juego. Esta clase está optimizada para reducir la dispersión de bala desde la cadera y mejorar la velocidad de movimiento. Ideal para mapas cerrados como Summit o Nuketown.</p>
+            </div>
+            <div class="attachments-grid">
+                <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Cañón Ligero y Extendido de MIP</span></div>
+                <div class="attachment-item"><span class="slot">Culata</span><span class="part">Culata Estable RTC</span></div>
+                <div class="attachment-item"><span class="slot">Láser</span><span class="part">Láser 5mW de MIP</span></div>
+                <div class="attachment-item"><span class="slot">Munición</span><span class="part">Mag Ampliado A</span></div>
+                <div class="attachment-item"><span class="slot">Ventaja</span><span class="part">Akimbo (Opcional) o Prestidigitación</span></div>
+            </div>
+        </div>
+
+        <div class="loadout-card">
+            <h2 class="weapon-name">
+                DL Q33
+                <span class="weapon-type">FRANCOTIRADOR</span>
+            </h2>
+            <div class="strategy-box">
+                <p><strong>El Rey de los Snipers:</strong><br>
+                Aunque el Tundra ha ganado popularidad, el DL Q33 mantiene su consistencia con un "Hitbox" letal muy generoso. Esta configuración busca maximizar la velocidad de apuntado (ADS Speed) para permitir el "Quickscope". Es fundamental usar la ventaja de Pulmones de Hierro si juegas a largas distancias.</p>
+            </div>
+            <div class="attachments-grid">
+                <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Cañón Ligero de MIP</span></div>
+                <div class="attachment-item"><span class="slot">Culata</span><span class="part">Culata de Combate YKM</span></div>
+                <div class="attachment-item"><span class="slot">Láser</span><span class="part">Láser Táctico OWC</span></div>
+                <div class="attachment-item"><span class="slot">Ventaja</span><span class="part">Regreso de Balas</span></div>
+                <div class="attachment-item"><span class="slot">Silenciador</span><span class="part">Silenciador Táctico (Opcional)</span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; background: #222; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
+            <h3 style="color: #fff; margin-top: 0;">Nota sobre el equilibrio de armas</h3>
+            <p style="color: #aaa; margin-bottom: 0;">
+                Estas clases están actualizadas a la fecha actual. Recuerda que Activision suele modificar las estadísticas de las armas a mitad de temporada. Revisa esta página cada viernes para ver las actualizaciones.
             </p>
-            <p>
-                Hemos probado más de 50 armas en el rango Leyenda para traerte las 3 configuraciones definitivas. 
-                Estas clases están diseñadas para maximizar el TTK (Time to Kill) y controlar el retroceso horizontal, que es el factor más crítico en dispositivos móviles.
-            </p>
         </div>
 
-        <div class="gun-card">
-            <div class="gun-header">
-                <span class="gun-name">BP50</span>
-                <span class="gun-type">FUSIL DE ASALTO</span>
-            </div>
-            <div class="gun-body">
-                <div>
-                    <h3 style="color: #fff; margin-top: 0;">🔧 Accesorios Meta</h3>
-                    <ul class="attachments">
-                        <li>Silenciador Maxim <span>Boca de Cañón</span></li>
-                        <li>Cañón Leroy 438mm Rapid <span>Cañón</span></li>
-                        <li>Culata Leroy Personalizada <span>Culata</span></li>
-                        <li>Empuñadura Trasera de Punteado <span>Empuñadura</span></li>
-                        <li>Cargador de 60 Balas .556 <span>Munición</span></li>
-                    </ul>
-                </div>
-                <div class="gun-analysis">
-                    <h3 style="color: #fff; margin-top: 0;">💡 Análisis Táctico</h3>
-                    <p>
-                        La <strong>BP50</strong> sigue siendo la reina indiscutible del meta actual. Su cadencia de fuego es superior a la de muchos subfusiles, lo que la hace letal a corta y media distancia.
-                    </p>
-                    <p>
-                        <strong>Cómo usarla:</strong> Esta clase está configurada para jugar agresivo (Slayer). El cargador de 60 balas te permite enfrentarte a 2 o 3 enemigos sin recargar. Controla el retroceso vertical los primeros 5 disparos y el arma será un láser. Ideal para mapas como Nuketown o Summit.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="gun-card">
-            <div class="gun-header">
-                <span class="gun-name">ISO</span>
-                <span class="gun-type">SUBFUSIL (SMG)</span>
-            </div>
-            <div class="gun-body">
-                <div>
-                    <h3 style="color: #fff; margin-top: 0;">🔧 Accesorios Meta</h3>
-                    <ul class="attachments">
-                        <li>Silenciador Agency <span>Boca de Cañón</span></li>
-                        <li>Cañón FSS Nightshade <span>Cañón</span></li>
-                        <li>Sin Culata <span>Culata</span></li>
-                        <li>Láser de 5mW de Combate <span>Láser</span></li>
-                        <li>Tambor de 50 Balas <span>Munición</span></li>
-                    </ul>
-                </div>
-                <div class="gun-analysis">
-                    <h3 style="color: #fff; margin-top: 0;">💡 Análisis Táctico</h3>
-                    <p>
-                        Si te gusta rushear, la <strong>ISO</strong> es tu mejor opción en diciembre. Ha desplazado a la Fennec gracias a su mejor alcance de daño y recarga más rápida.
-                    </p>
-                    <p>
-                        <strong>Cómo usarla:</strong> La clave es la movilidad. Con la ventaja "Sin Culata", te moverás un 15% más rápido. Úsala para entrar en los puntos calientes (Hardpoint) y limpiar esquinas. No intentes duelos a larga distancia; acércate usando el deslizamiento y dispara desde la cadera si es necesario.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="gun-card">
-            <div class="gun-header">
-                <span class="gun-name">LW3-Tundra</span>
-                <span class="gun-type">FRANCOTIRADOR</span>
-            </div>
-            <div class="gun-body">
-                <div>
-                    <h3 style="color: #fff; margin-top: 0;">🔧 Accesorios Meta</h3>
-                    <ul class="attachments">
-                        <li>Silenciador Táctico <span>Boca de Cañón</span></li>
-                        <li>Cañón Tiger Team 28.2" <span>Cañón</span></li>
-                        <li>Empuñadura de Serpiente <span>Empuñadura Trasera</span></li>
-                        <li>Cargador Rápido de 7 Balas <span>Munición</span></li>
-                        <li>Láser de Ayuda de Tiro <span>Láser</span></li>
-                    </ul>
-                </div>
-                <div class="gun-analysis">
-                    <h3 style="color: #fff; margin-top: 0;">💡 Análisis Táctico</h3>
-                    <p>
-                        Para los amantes del Quickscope, el <strong>Tundra</strong> ofrece la velocidad de apuntado más rápida del juego combinada con un "hitbox" de muerte instantánea muy generoso (pecho y cabeza).
-                    </p>
-                    <p>
-                        <strong>Cómo usarla:</strong> Esta configuración prioriza la velocidad de ADS (Aim Down Sight). Es perfecta para modos como Buscar y Destruir. Recuerda usar la ventaja "Amped" (Amplificado) para cambiar a tu pistola o cuchillo rápidamente si fallas el primer tiro.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <a href="index.html" class="btn-back">« Volver al Inicio</a>
     </div>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #fff;">CODM CONTADOR</p>
+            <div style="border-top: 1px solid #333; padding-top: 20px;">
+                <a href="index.html">Inicio</a> | 
+                <a href="privacidad.html">Privacidad</a> | 
+                <a href="clases.html">Meta Actual</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
