@@ -90,28 +90,28 @@
             text-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
         }
         
-@keyframes pulse-green {
-    0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
-}
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+        }
 
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #000;
-    color: #44ff44; /* Verde neón más brillante */
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    margin-bottom: 20px;
-    border: 1px solid #44ff44;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px rgba(68, 255, 68, 0.2);
-    animation: pulse-green 2s infinite; /* Aquí está la magia */
-}
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #000;
+            color: #44ff44; /* Verde neón más brillante */
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            border: 1px solid #44ff44;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(68, 255, 68, 0.2);
+            animation: pulse-green 2s infinite; /* Aquí está la magia */
+        }
 
         .countdown-grid {
             display: grid;
@@ -149,58 +149,59 @@
             margin-bottom: 40px;
         }
 
-.nav-card {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    padding: 40px 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    border: 1px solid #444;
-    transition: all 0.3s ease;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    display: block;
-}
+        .nav-card {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
 
-.nav-card:hover {
-    transform: translateY(-5px) scale(1.02)
-    border-color: #ffaa00;
-    box-shadow: 0 0 25px rgba(255, 170, 0, 0.4)
-}
+        .nav-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ffaa00;
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.4);
+        }
 
-.nav-card:hover .card-icon {
-    transform: scale(1.2)
-}
+        .nav-card:hover .card-icon {
+            transform: scale(1.2);
+        }
 
-.card-icon { 
-    font-size: 2.5rem; 
-    margin-bottom: 15px; 
-    display: block; 
-    transition: transform 0.3s;
-    text-shadow: 0 0 15px rgba(255, 170, 0, 0.8)
-    color: #fff
-}
+        .card-icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            display: block; 
+            transition: transform 0.3s;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
+            color: #fff;
+        }
 
-.card-title { 
-    font-family: 'Black Ops One'; 
-    font-size: 1.4rem; 
-    color: #ffaa00; /
-    display: block; 
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8)
-}
+        .card-title { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.4rem; 
+            color: #ffaa00; 
+            display: block; 
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
 
-.card-desc { 
-    font-size: 0.95rem; 
-    color: #ffeebb;
-    display: block; 
-    line-height: 1.4;
-    font-weight: 500;
-}
+        .card-desc { 
+            font-size: 0.95rem; 
+            color: #ffeebb;
+            display: block; 
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
         /* TEXTO SEO */
         .content-box {
             text-align: left; 
@@ -443,9 +444,9 @@
     </div>
 
     <footer>
-<p style="font-size: 0.75rem; color: #555; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-    Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision. Todo el contenido del juego, imágenes y marcas registradas pertenecen a sus respectivos propietarios. Uso bajo la doctrina de "Fair Use" con fines informativos.
-</p>
+        <p style="font-size: 0.75rem; color: #555; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision. Todo el contenido del juego, imágenes y marcas registradas pertenecen a sus respectivos propietarios. Uso bajo la doctrina de "Fair Use" con fines informativos.
+        </p>
         <div style="max-width: 800px; margin: 0 auto;">
             <p style="margin-bottom: 20px; font-weight: bold; color: #fff; font-size: 1.2rem; font-family: 'Black Ops One';">CODM CONTADOR</p>
             <p style="margin-bottom: 20px;">Somos un sitio web creado por fans para fans. No estamos afiliados con Activision ni TiMi Studios. Nuestro propósito es informar y ayudar a la comunidad a mejorar su nivel de juego.</p>
@@ -494,61 +495,50 @@
         updateTimer();
     </script>
 
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; padding: 20px; text-align: center; border-top: 2px solid #ffaa00; z-index: 9999; display: none;">
-        <p style="margin: 0 0 10px 0; color: #fff;">Usamos cookies para mejorar tu experiencia y mostrar anuncios relevantes.</p>
-        <button onclick="acceptCookies()" style="background: #ffaa00; border: none; padding: 10px 20px; color: #000; font-weight: bold; cursor: pointer; border-radius: 5px;">Aceptar</button>
+    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
+        
+        <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
+        
+        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
+            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
+            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
+        </p>
+
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+                Rechazar Todo
+            </button>
+            
+            <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
+                Aceptar Cookies
+            </button>
+        </div>
     </div>
 
     <script>
-        if (!localStorage.getItem("cookiesAccepted")) {
-            document.getElementById("cookie-banner").style.display = "block";
+        // Lógica inteligente de Cookies
+        function checkCookies() {
+            if (!localStorage.getItem("cookieConsent")) {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
         }
+
         function acceptCookies() {
-            localStorage.setItem("cookiesAccepted", "true");
+            localStorage.setItem("cookieConsent", "accepted");
             document.getElementById("cookie-banner").style.display = "none";
         }
-    </script>
-<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
-    
-    <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
-    
-    <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
-        Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
-        Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
-    </p>
 
-    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
-            Rechazar Todo
-        </button>
-        
-        <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
-            Aceptar Cookies
-        </button>
-    </div>
-</div>
-
-<script>
-    function checkCookies() {
-        if (!localStorage.getItem("cookieConsent")) {
-            document.getElementById("cookie-banner").style.display = "block";
+        function rejectCookies() {
+            localStorage.setItem("cookieConsent", "rejected");
+            document.getElementById("cookie-banner").style.display = "none";
         }
-    }
 
-    function acceptCookies() {
-        localStorage.setItem("cookieConsent", "accepted");
-        document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    function rejectCookies() {
-        localStorage.setItem("cookieConsent", "rejected");
-        document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function() {
-        checkCookies();
-        if(typeof updateTimer === 'function') updateTimer(); 
-    };
-</script>
+        // Iniciar chequeo al cargar (CON CUIDADO DE NO ROMPER EL RELOJ)
+        window.onload = function() {
+            checkCookies();
+            // Esta línea es vital para que el reloj del Index siga funcionando:
+            if(typeof updateTimer === 'function') updateTimer(); 
+        };
+    </script>
 </body>
 </html>

@@ -18,14 +18,14 @@
     </script>
 
     <style>
-        /* Mismos estilos base del Index para mantener consistencia */
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
             --primary: #ffaa00;
             --dark: #0a0a0a;
-            --card-bg: rgba(20, 20, 20, 0.9);
+            --card-bg: rgba(20, 20, 20, 0.95);
             --border: #333;
+            --danger: #ff4444;
         }
 
         body {
@@ -34,7 +34,8 @@
             color: #e0e0e0;
             margin: 0;
             padding: 0;
-            background-image: url('police-1282330_1280.jpg'); /* Asegúrate de que la imagen exista */
+            /* Si no tienes esta imagen específica, cambia a 'fondo.png' */
+            background-image: url('police-1282330_1280.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -64,29 +65,29 @@
             padding: 0 20px;
         }
 
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(0,0,0,0.8);
-    color: var(--primary);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 50px;
-    border: 1px solid var(--primary);
-    font-weight: bold;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    font-family: 'Black Ops One', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-.back-btn:hover {
-    background: var(--primary);
-    color: #000;
-    transform: translateX(-5px);
-}
-        /* Estilos específicos para las Clases de Armas */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0,0,0,0.8);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid var(--primary);
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-family: 'Black Ops One', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .back-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateX(-5px);
+        }
+
         .page-title {
             font-family: 'Black Ops One';
             font-size: 2.5rem;
@@ -103,6 +104,9 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            background: rgba(0,0,0,0.6);
+            padding: 15px;
+            border-radius: 10px;
         }
 
         .loadout-card {
@@ -128,6 +132,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .weapon-type {
@@ -137,6 +143,16 @@
             padding: 5px 10px;
             border-radius: 4px;
             color: var(--primary);
+        }
+
+        .weapon-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #444;
+            margin: 15px auto;
+            display: block;
         }
 
         .attachments-grid {
@@ -171,8 +187,13 @@
             color: #ccc;
             line-height: 1.6;
             font-size: 0.95rem;
+            padding: 10px;
+            background: rgba(255, 170, 0, 0.05);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 5px 5px 0;
         }
 
+        /* FOOTER */
         footer {
             background: #000;
             padding: 40px 20px;
@@ -180,7 +201,18 @@
             border-top: 1px solid #222;
             margin-top: 60px;
         }
-        footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        footer a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        footer a:hover { color: var(--primary); }
+
+        .report-btn {
+            display: inline-block; margin-top: 20px; padding: 10px 20px;
+            border: 1px solid var(--danger); border-radius: 5px;
+            color: var(--danger) !important; font-weight: bold;
+            background: rgba(255, 68, 68, 0.05); font-family: 'Black Ops One', sans-serif;
+            letter-spacing: 1px;
+        }
+        .report-btn:hover { background: var(--danger); color: #000 !important; }
+
     </style>
 </head>
 <body>
@@ -192,7 +224,8 @@
     </nav>
 
     <div class="container">
-<a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
+        <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
+        
         <h1 class="page-title">META ACTUAL: TEMPORADA 11</h1>
         <p class="intro-text">
             Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas. Si quieres subir a Leyenda en Multijugador, estas son las herramientas que necesitas dominar esta semana.
@@ -207,15 +240,13 @@
                 DR-H 
                 <span class="weapon-type">RIFLE DE ASALTO</span>
             </h2>
-<div class="loadout-card">  
-    <img src="drh.jpg" alt="Mejor clase DR-H COD Mobile" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; border: 1px solid #444; margin: 15px 0; display: block;">
-    
-    <div class="strategy-box">
-</div>
+            <img src="drh.jpg" alt="Mejor clase DR-H COD Mobile" class="weapon-img">
+            
             <div class="strategy-box">
                 <p><strong>¿Por qué está en el Meta?</strong><br>
-                La DR-H sigue siendo la reina del alcance medio gracias a su munición especial OTM. A pesar de los recientes ajustes, su capacidad para eliminar enemigos de 3 disparos en el pecho la convierte en la opción favorita de los jugadores profesionales en modos como Punto Caliente y Dominio.</p>
+                La DR-H sigue siendo la reina del alcance medio gracias a su munición especial OTM. A pesar de los recientes ajustes, su capacidad para eliminar enemigos de 3 disparos en el pecho la convierte en la opción favorita de los jugadores profesionales.</p>
             </div>
+            
             <div class="attachments-grid">
                 <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Tirador OWC</span></div>
                 <div class="attachment-item"><span class="slot">Culata</span><span class="part">Sin Culata</span></div>
@@ -230,21 +261,19 @@
                 FENNEC
                 <span class="weapon-type">SUBFUSIL (SMG)</span>
             </h2>
-<div class="loadout-card">    
-    <img src="fennec.jpg" alt="Mejor clase FENNEC COD Mobile" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; border: 1px solid #444; margin: 15px 0; display: block;">
-    
-    <div class="strategy-box">
-</div>
+            <img src="fennec.jpg" alt="Mejor clase FENNEC COD Mobile" class="weapon-img">
+            
             <div class="strategy-box">
                 <p><strong>Estrategia de Uso:</strong><br>
-                Si tu estilo de juego es agresivo (Rusher), la Fennec es indiscutible. Tiene la cadencia de disparo más alta del juego. Esta clase está optimizada para reducir la dispersión de bala desde la cadera y mejorar la velocidad de movimiento. Ideal para mapas cerrados como Summit o Nuketown.</p>
+                Si tu estilo de juego es agresivo (Rusher), la Fennec es indiscutible. Tiene la cadencia de disparo más alta del juego. Esta clase está optimizada para reducir la dispersión de bala desde la cadera y mejorar la velocidad de movimiento. Ideal para mapas como Summit o Nuketown.</p>
             </div>
+            
             <div class="attachments-grid">
                 <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Cañón Ligero y Extendido de MIP</span></div>
                 <div class="attachment-item"><span class="slot">Culata</span><span class="part">Culata Estable RTC</span></div>
                 <div class="attachment-item"><span class="slot">Láser</span><span class="part">Láser 5mW de MIP</span></div>
                 <div class="attachment-item"><span class="slot">Munición</span><span class="part">Mag Ampliado A</span></div>
-                <div class="attachment-item"><span class="slot">Ventaja</span><span class="part">Akimbo (Opcional) o Prestidigitación</span></div>
+                <div class="attachment-item"><span class="slot">Ventaja</span><span class="part">Prestidigitación</span></div>
             </div>
         </div>
 
@@ -253,90 +282,82 @@
                 DL Q33
                 <span class="weapon-type">FRANCOTIRADOR</span>
             </h2>  
-    <img src="dlq33.jpg" alt="Mejor clase DR-H COD Mobile" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; border: 1px solid #444; margin: 15px 0; display: block;">
-    
-    <div class="strategy-box">
-</div>
+            <img src="dlq33.jpg" alt="Mejor clase DL Q33 COD Mobile" class="weapon-img">
+            
             <div class="strategy-box">
                 <p><strong>El Rey de los Snipers:</strong><br>
-                Aunque el Tundra ha ganado popularidad, el DL Q33 mantiene su consistencia con un "Hitbox" letal muy generoso. Esta configuración busca maximizar la velocidad de apuntado (ADS Speed) para permitir el "Quickscope". Es fundamental usar la ventaja de Pulmones de Hierro si juegas a largas distancias.</p>
+                Aunque el Tundra ha ganado popularidad, el DL Q33 mantiene su consistencia con un "Hitbox" letal muy generoso. Esta configuración busca maximizar la velocidad de apuntado (ADS Speed) para permitir el "Quickscope".</p>
             </div>
+            
             <div class="attachments-grid">
                 <div class="attachment-item"><span class="slot">Cañón</span><span class="part">Cañón Ligero de MIP</span></div>
                 <div class="attachment-item"><span class="slot">Culata</span><span class="part">Culata de Combate YKM</span></div>
                 <div class="attachment-item"><span class="slot">Láser</span><span class="part">Láser Táctico OWC</span></div>
                 <div class="attachment-item"><span class="slot">Ventaja</span><span class="part">Regreso de Balas</span></div>
-                <div class="attachment-item"><span class="slot">Silenciador</span><span class="part">Silenciador Táctico (Opcional)</span></div>
+                <div class="attachment-item"><span class="slot">Silenciador</span><span class="part">Silenciador Táctico</span></div>
             </div>
         </div>
 
         <div style="margin-top: 40px; background: #222; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
             <h3 style="color: #fff; margin-top: 0;">Nota sobre el equilibrio de armas</h3>
             <p style="color: #aaa; margin-bottom: 0;">
-                Estas clases están actualizadas a la fecha actual. Recuerda que Activision suele modificar las estadísticas de las armas a mitad de temporada. Revisa esta página cada viernes para ver las actualizaciones.
+                Estas clases están actualizadas a la fecha actual. Activision suele modificar las estadísticas de las armas a mitad de temporada. Revisa esta página cada viernes.
             </p>
         </div>
 
     </div>
 
     <footer>
+        <p style="font-size: 0.75rem; color: #555; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision.
+        </p>
         <div style="max-width: 800px; margin: 0 auto;">
-            <p style="margin-bottom: 20px; font-weight: bold; color: #fff;">CODM CONTADOR</p>
             <div style="border-top: 1px solid #333; padding-top: 20px;">
                 <a href="index.html">Inicio</a> | 
                 <a href="privacidad.html">Privacidad</a> | 
                 <a href="clases.html">Meta Actual</a>
             </div>
+            <br>
+            <a href="mailto:feliperico080@gmail.com?subject=Reporte%20Error%20Web%20CODM" class="report-btn">
+                ⚠ Reportar Error
+            </a>
             <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador.</p>
         </div>
     </footer>
-<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
-    
-    <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
-    
-    <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
-        Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
-        Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
-    </p>
 
-    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
-            Rechazar Todo
-        </button>
-        
-        <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
-            Aceptar Cookies
-        </button>
+    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
+        <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
+        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
+            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
+            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+                Rechazar Todo
+            </button>
+            <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
+                Aceptar Cookies
+            </button>
+        </div>
     </div>
-</div>
 
-<script>
-    // Lógica inteligente de Cookies
-    function checkCookies() {
-        // Si no hay registro de decisión, mostramos el banner
-        if (!localStorage.getItem("cookieConsent")) {
-            document.getElementById("cookie-banner").style.display = "block";
+    <script>
+        function checkCookies() {
+            if (!localStorage.getItem("cookieConsent")) {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
         }
-    }
-
-    function acceptCookies() {
-        localStorage.setItem("cookieConsent", "accepted");
-        document.getElementById("cookie-banner").style.display = "none";
-        // Aquí podrías activar scripts de rastreo si quisieras ser muy estricto
-    }
-
-    function rejectCookies() {
-        localStorage.setItem("cookieConsent", "rejected");
-        document.getElementById("cookie-banner").style.display = "none";
-        // Al rechazar, simplemente cerramos y no guardamos datos sensibles
-    }
-
-    // Iniciar chequeo al cargar
-    window.onload = function() {
-        checkCookies();
-        // Si tienes la función updateTimer del reloj, asegúrate de que no choque con este onload
-        if(typeof updateTimer === 'function') updateTimer(); 
-    };
-</script>
+        function acceptCookies() {
+            localStorage.setItem("cookieConsent", "accepted");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+        function rejectCookies() {
+            localStorage.setItem("cookieConsent", "rejected");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+        window.onload = function() {
+            checkCookies();
+        };
+    </script>
 </body>
 </html>
