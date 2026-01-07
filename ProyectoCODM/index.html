@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODM Contador - Temporadas y Pases de Batalla</title>
-    <meta name="description" content="Cuenta regresiva exacta para la nueva temporada de Call of Duty Mobile. Meta actual, mejores clases y filtraciones.">
+    <title>CODM Contador: Portal de Noticias y Meta S11</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codmcontador.com/">
+    <meta property="og:title" content="CODM Contador | Temporada 11 y Meta Actual">
+    <meta property="og:description" content="Mira cuánto falta para la nueva temporada, calcula tus CP y descubre las mejores clases para subir a Leyenda.">
+    <meta property="og:image" content="https://codmcontador.com/fondo.png"> 
+    
+    <meta name="description" content="Portal oficial de Call of Duty Mobile. Cuenta regresiva de temporada, mejores clases (Meta), filtraciones y guías para subir a Leyenda.">
     <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-500Y1SE1CM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,127 +27,197 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
-            --primary: #ffaa00;
+            --primary: #ffaa00; /* Oro CODM */
             --dark: #0a0a0a;
-            --danger: #ff4444;
+            --card-bg: rgba(20, 20, 20, 0.9);
+            --border: #333;
+            --danger: #ff4444; /* Color para errores */
         }
 
         body {
-            margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
             background-image: url('police-1282330_1280.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            position: relative;
         }
 
-        /* Overlay oscuro para mejorar legibilidad */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
+        .navbar {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-transform: uppercase; }
+        .logo span { color: var(--primary); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        header {
+        .hero-section {
             text-align: center;
+            background: rgba(0,0,0,0.7);
             padding: 40px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-family: 'Black Ops One', cursive;
+            font-family: 'Black Ops One', sans-serif;
             font-size: 3rem;
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+            color: #fff;
             margin: 0;
-            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+        }
+        
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-top: 10px;
-        }
-
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+        .status-badge {
+            display: inline-flex;
             align-items: center;
-            padding: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-sizing: border-box;
+            gap: 8px;
+            background: #000;
+            color: #44ff44; /* Verde neón más brillante */
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            border: 1px solid #44ff44;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(68, 255, 68, 0.2);
+            animation: pulse-green 2s infinite; /* Aquí está la magia */
         }
 
-        /* MENU DE NAVEGACIÓN */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .time-box {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #444;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .time-box::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--primary); }
+        .number { display: block; font-family: 'Black Ops One'; font-size: 2.5rem; color: #fff; }
+        .label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* INTEL DE TEMPORADA */
+        .intel-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 0 10px 10px 0;
+        }
+        .intel-title { font-family: 'Black Ops One'; color: #fff; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .intel-text { line-height: 1.6; color: #ccc; }
+
+        /* GRID DE TARJETAS */
         .nav-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            width: 100%;
             margin-bottom: 40px;
         }
 
         .nav-card {
-            background: rgba(20, 20, 20, 0.9);
-            border: 1px solid #333;
-            padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
             border-radius: 12px;
-            text-align: center;
             text-decoration: none;
-            color: white;
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: block;
         }
 
         .nav-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.2);
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ffaa00;
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.4);
         }
 
-        .nav-card h3 {
-            font-family: 'Black Ops One';
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: var(--primary);
+        .nav-card:hover .card-icon {
+            transform: scale(1.2);
         }
 
-        /* CONTADOR PRINCIPAL */
-        .timer-box {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid var(--primary);
-            text-align: center;
-            box-shadow: 0 0 30px rgba(255, 170, 0, 0.15);
-            margin-bottom: 40px;
-            width: 100%;
-            max-width: 600px;
+        .card-icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            display: block; 
+            transition: transform 0.3s;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
+            color: #fff;
         }
 
-        .timer-display {
-            font-family: 'Black Ops One', monospace;
-            font-size: 3rem;
-            color: white;
-            margin: 20px 0;
+        .card-title { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.4rem; 
+            color: #ffaa00; 
+            display: block; 
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
-        
-        @media (max-width: 600px) {
-            .timer-display { font-size: 2rem; }
-            h1 { font-size: 2rem; }
+
+        .card-desc { 
+            font-size: 0.95rem; 
+            color: #ffeebb;
+            display: block; 
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* TEXTO SEO */
+        .content-box {
+            text-align: left; 
+            color: #ccc; 
+            line-height: 1.8; 
+            font-size: 1rem; 
+            background: #111; 
+            padding: 30px; 
+            border-radius: 10px; 
+            border: 1px solid #333;
+            margin-bottom: 30px;
+        }
+
+        .ad-container {
+            width: 100%; height: 100px; background-color: #111; border: 1px dashed #444;
+            display: flex; align-items: center; justify-content: center; margin: 20px 0; color: #555; border-radius: 8px;
         }
 
         /* FOOTER */
@@ -150,143 +226,319 @@
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #222;
-            width: 100%;
-            box-sizing: border-box;
+            font-size: 0.9rem;
+            color: #666;
         }
-
         footer a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
         footer a:hover { color: var(--primary); }
 
+        /* ESTILO DEL NUEVO BOTÓN DE REPORTE */
         .report-btn {
-            display: inline-block; margin-top: 20px; padding: 10px 20px;
-            border: 1px solid var(--danger); border-radius: 5px;
-            color: var(--danger) !important; font-weight: bold;
-            background: rgba(255, 68, 68, 0.05); font-family: 'Black Ops One', sans-serif;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--danger);
+            border-radius: 5px;
+            color: var(--danger) !important; /* Forza el color rojo */
+            font-weight: bold;
+            background: rgba(255, 68, 68, 0.05);
+            font-family: 'Black Ops One', sans-serif;
             letter-spacing: 1px;
         }
-        .report-btn:hover { background: var(--danger); color: #000 !important; }
+        .report-btn:hover {
+            background: var(--danger);
+            color: #000 !important;
+            box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+            transform: scale(1.02);
+        }
 
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+            .number { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>CODM CONTADOR</h1>
-        <div class="subtitle">Temporada 11: Ultimate Frontier</div>
-    </header>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">CODM <span>CONTADOR</span></div>
+        </div>
+    </nav>
 
     <div class="container">
+        <div class="ad-container">ESPACIO ADSENSE (BANNER SUPERIOR)</div>
+
+        <div class="hero-section">
+            <span class="status-badge">🟢 SERVIDORES ACTIVOS | TEMPORADA ACTUAL</span>
+            <h1>NUEVA TEMPORADA</h1>
+            <p style="color: #aaa; margin-top: 5px;">Cuenta regresiva oficial para la siguiente actualización</p>
+
+            <div class="countdown-grid">
+                <div class="time-box"><span class="number" id="days">00</span><span class="label">Días</span></div>
+                <div class="time-box"><span class="number" id="hours">00</span><span class="label">Horas</span></div>
+                <div class="time-box"><span class="number" id="minutes">00</span><span class="label">Mins</span></div>
+                <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Segs</span></div>
+            </div>
+        </div>
         
-        <div style="width: 100%; height: 100px; background: rgba(0,0,0,0.5); border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #666;">
-            ANUNCIO GOOGLE
+        <div style="background: rgba(20,20,20,0.95); padding: 25px; border-radius: 12px; border: 1px solid #ffaa00; margin-bottom: 40px; box-shadow: 0 0 15px rgba(255, 170, 0, 0.1);">
+            <h2 style="font-family: 'Black Ops One'; color: #ffaa00; text-align: center; margin-top: 0;">CALCULADORA DE RECARGA</h2>
+            <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Calcula cuánto dinero real necesitas para tus CP.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="display: block; color: #fff; margin-bottom: 5px;">Cantidad de CP deseada:</label>
+                    <input type="number" id="cpInput" placeholder="Ej: 5000" style="width: 100%; padding: 10px; background: #111; border: 1px solid #444; color: #fff; border-radius: 5px;">
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <label style="display: block; color: #fff; margin-bottom: 5px;">Región / Moneda:</label>
+                    <select id="currencySelect" style="width: 100%; padding: 10px; background: #111; border: 1px solid #444; color: #fff; border-radius: 5px;">
+                        <option value="0.01">Dólar (USD)</option>
+                        <option value="40">Peso Colombiano (COP)</option>
+                        <option value="0.20">Peso Mexicano (MXN)</option>
+                        <option value="0.009">Euro (EUR)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="calcularPrecio()" style="width: 100%; background: #ffaa00; color: #000; font-weight: bold; padding: 15px; border: none; border-radius: 5px; margin-top: 20px; cursor: pointer; font-family: 'Black Ops One'; font-size: 1.1rem;">CALCULAR PRECIO ESTIMADO</button>
+
+            <div id="resultado" style="margin-top: 20px; text-align: center; font-size: 1.5rem; font-weight: bold; color: #fff; display: none;">
+                Costo: <span style="color: #ffaa00;">$0</span>
+            </div>
         </div>
 
-        <div class="timer-box">
-            <h2 style="margin: 0; color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem;">Tiempo Restante Temporada</h2>
-            <div class="timer-display" id="season-timer">Cargando...</div>
-            
-            <hr style="border-color: #333; margin: 20px 0;">
+        <script>
+            function calcularPrecio() {
+                const cp = document.getElementById('cpInput').value;
+                const rate = document.getElementById('currencySelect').value;
+                
+                if(cp > 0) {
+                    // Fórmula aproximada (CP * Tasa)
+                    const costo = (cp * rate).toLocaleString(); 
+                    const moneda = document.getElementById('currencySelect').options[document.getElementById('currencySelect').selectedIndex].text;
+                    
+                    document.getElementById('resultado').style.display = 'block';
+                    document.getElementById('resultado').innerHTML = `Costo Aprox: <span style="color: #ffaa00;">$${costo}</span> <span style="font-size: 0.8rem; color: #888;">(${moneda})</span>`;
+                }
+            }
+        </script>
 
-            <h2 style="margin: 0; color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem;">Pase de Batalla</h2>
-            <div class="timer-display" id="bp-timer" style="font-size: 2rem; color: var(--primary);">Cargando...</div>
+        <div style="background: rgba(20,20,20,0.95); padding: 20px; border-radius: 12px; border: 1px solid #333; margin-top: 40px; margin-bottom: 40px;">
+            <h2 style="font-family: 'Black Ops One'; color: #fff; text-align: center; margin-top: 0;">RANKING DE ARMAS (TIER LIST)</h2>
+            
+            <style>
+                .tier-row { display: flex; margin-bottom: 10px; border-radius: 5px; overflow: hidden; }
+                .tier-label { width: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Black Ops One'; font-size: 1.5rem; color: #000; }
+                .tier-content { flex: 1; background: #1a1a1a; display: flex; align-items: center; padding: 10px; color: #fff; gap: 15px; flex-wrap: wrap; }
+                .weapon-tag { background: #333; padding: 5px 10px; border-radius: 4px; font-size: 0.9rem; border: 1px solid #555; }
+            </style>
+
+            <div class="tier-row">
+                <div class="tier-label" style="background: #ff4444;">S</div>
+                <div class="tier-content">
+                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">DR-H</span>
+                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">HVK-30</span>
+                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">Fennec</span>
+                    <span class="weapon-tag">Tundra</span>
+                </div>
+            </div>
+
+            <div class="tier-row">
+                <div class="tier-label" style="background: #ffaa00;">A</div>
+                <div class="tier-content">
+                    <span class="weapon-tag">Kilo 141</span>
+                    <span class="weapon-tag">Grau 5.56</span>
+                    <span class="weapon-tag">DL Q33</span>
+                    <span class="weapon-tag">QQ9</span>
+                    <span class="weapon-tag">Switchblade X9</span>
+                </div>
+            </div>
+
+            <div class="tier-row">
+                <div class="tier-label" style="background: #ffff00;">B</div>
+                <div class="tier-content">
+                    <span class="weapon-tag">M13</span>
+                    <span class="weapon-tag">CBR4</span>
+                    <span class="weapon-tag">Locus</span>
+                    <span class="weapon-tag">AK117</span>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #666; font-size: 0.8rem; margin-top: 10px;">Actualizado para la Temporada actual.</p>
+        </div>
+
+        <div class="intel-box">
+            <h3 class="intel-title">📁 Resumen de Temporada</h3>
+            <p class="intel-text">
+                Actualmente estamos en la recta final de la Serie de Rango. Se recomienda a los jugadores aprovechar los bonos de XP de fin de semana para alcanzar el rango Leyenda antes del <strong>15 de Enero</strong>.
+            </p>
         </div>
 
         <div class="nav-grid">
-            <a href="clases.html" class="nav-card">
-                <span style="font-size: 2rem;">🔫</span>
-                <h3>META & CLASES</h3>
-                <p>Las mejores armas de la temporada actualizadas.</p>
-            </a>
-            
             <a href="filtraciones.html" class="nav-card">
-                <span style="font-size: 2rem;">🕵️‍♂️</span>
-                <h3>FILTRACIONES</h3>
-                <p>Lo que viene en la próxima actualización.</p>
+                <span class="card-icon">🔥</span>
+                <span class="card-title">FILTRACIONES</span>
+                <span class="card-desc">Videos confirmados del nuevo Pase y Skins Míticas.</span>
             </a>
-
+            <a href="clases.html" class="nav-card">
+                <span class="card-icon">🔫</span>
+                <span class="card-title">META ACTUAL</span>
+                <span class="card-desc">Configuraciones de armas para Rango Leyenda.</span>
+            </a>
             <a href="guias.html" class="nav-card">
-                <span style="font-size: 2rem;">📚</span>
-                <h3>GUÍAS PRO</h3>
-                <p>Mejora tu movimiento y sensibilidad.</p>
+                <span class="card-icon">📚</span>
+                <span class="card-title">ACADEMIA</span>
+                <span class="card-desc">Aprende a jugar como pro: Movimiento y Spawns.</span>
             </a>
         </div>
 
-        <div style="width: 100%; height: 250px; background: rgba(0,0,0,0.5); border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #666;">
-            ANUNCIO GOOGLE CUADRADO
+        <div class="content-box">
+            <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis y Herramientas para Call of Duty Mobile</h2>
+            <p>
+                Bienvenidos a <strong>CODM Contador</strong>, el portal de referencia para la comunidad hispana. Nuestra misión es centralizar la información dispersa sobre las actualizaciones de Activision y TiMi Studios, ofreciendo herramientas precisas como nuestro <strong>contador de temporada</strong> y guías de optimización.
+            </p>
+
+            <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">¿Cómo funciona el ciclo de temporadas en CODM?</h3>
+            <p>
+                A diferencia de otros shooters móviles, Call of Duty Mobile opera bajo el horario UTC (Tiempo Universal Coordinado). Esto suele generar confusión en jugadores de Latinoamérica y España respecto a cuándo termina exactamente el Pase de Batalla o cuándo se reinicia el Rango de MJ y BR. 
+                <br><br>
+                Nuestra herramienta sincroniza tu hora local con los servidores globales, calculando el tiempo exacto restante para:
+            </p>
+            <ul style="list-style-type: square; color: #ccc; margin-left: 20px;">
+                <li>El reinicio de la Serie de Rango (cada 2 meses).</li>
+                <li>El lanzamiento del nuevo Pase de Batalla (mensual).</li>
+                <li>La rotación de mapas y modos de juego destacados.</li>
+            </ul>
+
+            <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">Meta Actual y Optimización de Armas</h3>
+            <p>
+                Entender el "Meta" (Most Effective Tactic Available) es crucial para subir a Leyenda. En nuestra sección de clases analizamos los parches de equilibrio de armas. Actualmente, el juego prioriza la movilidad y el tiempo de apuntado (ADS). 
+                Recomendamos revisar nuestras guías para armas de asalto y subfusiles, donde explicamos cómo el sistema de armero (Gunsmith) afecta el retroceso y la dispersión de bala.
+            </p>
+
+            <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">Preguntas Frecuentes (FAQ)</h3>
+            <p><strong>¿Esta herramienta es oficial de Activision?</strong><br>
+            No, somos una plataforma desarrollada por fans para ayudar a la comunidad a planificar sus sesiones de juego y compras de CP (COD Points).</p>
+            
+            <p><strong>¿Cuándo se actualiza la información?</strong><br>
+            Nuestro sistema verifica las notas del parche oficiales y las filtraciones de la versión china y global cada 24 horas para asegurar que el contador sea preciso.</p>
         </div>
 
+        <div style="text-align: center; margin-bottom: 40px;">
+            <a href="https://www.facebook.com/" target="_blank" style="background-color: #1877F2; border: 1px solid #1877F2; color: #fff; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4); transition: transform 0.2s;">
+                👥 Unirme al Grupo de Facebook
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h3 style="color: #fff; font-family: 'Black Ops One'; margin-bottom: 20px;">VOTACIÓN SEMANAL</h3>
+            <div class="strawpoll-embed" id="strawpoll_wAg3QXo58y8" style="height: 400px; max-width: 600px; width: 100%; margin: 0 auto; border-radius: 10px; overflow: hidden;">
+                <iframe title="StrawPoll Embed" id="strawpoll_iframe_wAg3QXo58y8" src="https://strawpoll.com/embed/wAg3QXo58y8" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="ad-container">ESPACIO ADSENSE (BANNER INFERIOR)</div>
     </div>
 
     <footer>
         <p style="font-size: 0.75rem; color: #555; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision.
+            Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision. Todo el contenido del juego, imágenes y marcas registradas pertenecen a sus respectivos propietarios. Uso bajo la doctrina de "Fair Use" con fines informativos.
         </p>
         <div style="max-width: 800px; margin: 0 auto;">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #fff; font-size: 1.2rem; font-family: 'Black Ops One';">CODM CONTADOR</p>
+            <p style="margin-bottom: 20px;">Somos un sitio web creado por fans para fans. No estamos afiliados con Activision ni TiMi Studios. Nuestro propósito es informar y ayudar a la comunidad a mejorar su nivel de juego.</p>
+            
             <div style="border-top: 1px solid #333; padding-top: 20px;">
-                <a href="index.html">Inicio</a> | 
-                <a href="sobre.html">Sobre Nosotros</a> | 
-                <a href="contacto.html">Contacto</a> | 
-                <a href="privacidad.html">Privacidad</a>
+                <a href="privacidad.html">Política de Privacidad</a> | 
+                <a href="guias.html">Guías</a>
             </div>
+
             <br>
             <a href="mailto:feliperico080@gmail.com?subject=Reporte%20Error%20Web%20CODM" class="report-btn">
-                ⚠ Reportar Error
+                ⚠ Reportar Error en la Página
             </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">© 2025 CODM Contador.</p>
+
+            <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script>
+        const releaseDate = new Date("January 15, 2026 19:00:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const difference = releaseDate - now;
+
+            if (difference < 0) {
+                document.querySelector(".countdown-grid").innerHTML = 
+                    "<div style='grid-column: span 4; background: #222; padding: 20px; border: 2px solid #ffaa00; border-radius: 10px;'>" +
+                    "<h2 style='color: #fff; margin:0;'>¡TEMPORADA DISPONIBLE!</h2>" +
+                    "<p style='color: #aaa;'>Actualiza el juego para ver el nuevo contenido.</p>" +
+                    "</div>";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+
     <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
+        
         <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
+        
         <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
-            Usamos cookies propias y de terceros para mejorar tu experiencia y analizar nuestro tráfico.
-            <a href="privacidad.html" style="color: #ffaa00;">Ver Política</a>.
+            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
+            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
         </p>
+
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Rechazar Todo</button>
-            <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">Aceptar Cookies</button>
+            <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+                Rechazar Todo
+            </button>
+            
+            <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
+                Aceptar Cookies
+            </button>
         </div>
     </div>
 
     <script>
-        // CONFIGURACIÓN DE FECHAS (Modifica estas fechas)
-        const seasonEnd = new Date("2026-02-07T19:00:00-05:00").getTime(); // Ejemplo
-        const bpEnd = new Date("2026-02-05T19:00:00-05:00").getTime();     // Ejemplo
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            
-            function formatTime(distance) {
-                if (distance < 0) return "FINALIZADO";
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }
-
-            document.getElementById("season-timer").innerHTML = formatTime(seasonEnd - now);
-            document.getElementById("bp-timer").innerHTML = formatTime(bpEnd - now);
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Cookies
+        // Lógica inteligente de Cookies
         function checkCookies() {
             if (!localStorage.getItem("cookieConsent")) {
                 document.getElementById("cookie-banner").style.display = "block";
             }
         }
+
         function acceptCookies() {
             localStorage.setItem("cookieConsent", "accepted");
             document.getElementById("cookie-banner").style.display = "none";
         }
+
         function rejectCookies() {
             localStorage.setItem("cookieConsent", "rejected");
             document.getElementById("cookie-banner").style.display = "none";
         }
-        window.onload = checkCookies;
+
+        // Iniciar chequeo al cargar (CON CUIDADO DE NO ROMPER EL RELOJ)
+        window.onload = function() {
+            checkCookies();
+            // Esta línea es vital para que el reloj del Index siga funcionando:
+            if(typeof updateTimer === 'function') updateTimer(); 
+        };
     </script>
 </body>
 </html>

@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtraciones CODM: Temporada 12 y Skins Míticas</title>
-    <meta name="description" content="Información confidencial sobre las próximas actualizaciones de Call of Duty Mobile. Nuevas armas, mapas y ruletas míticas.">
-    <meta name="robots" content="noindex" /> 
+    <title>Filtraciones S12: Skins y Pase de Batalla - CODM Contador</title>
     <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
@@ -18,144 +16,106 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Courier+Prime:wght@400;700&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
+        
         :root {
-            --neon-red: #ff3333;
-            --dark-bg: #050505;
-            --matrix-green: #0f0;
+            --primary: #ffaa00;
+            --danger: #ff4444;
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: #ddd;
-            font-family: 'Courier Prime', monospace;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            background-image: url('fondo.png'); /* Asegúrate que esta imagen existe, si no, usa la del index */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
-            background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, #111 1px, #111 2px);
-            background-size: 100% 4px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(0,0,0,0.8); color: #ffaa00; padding: 10px 20px;
+            text-decoration: none; border-radius: 50px; border: 1px solid #ffaa00;
+            font-weight: bold; margin-bottom: 20px; font-family: 'Black Ops One';
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: #ffaa00; color: #000; }
+
+        .secret-file {
+            background: rgba(20, 20, 20, 0.95);
             border: 1px solid #333;
+            border-left: 5px solid #ff0000; /* Borde rojo para "Secreto" */
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 5px;
             position: relative;
         }
 
-        .top-secret-stamp {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            border: 5px solid var(--neon-red);
-            color: var(--neon-red);
-            font-family: 'Black Ops One', sans-serif;
-            font-size: 2rem;
-            padding: 10px 20px;
-            transform: rotate(15deg);
-            opacity: 0.7;
-            pointer-events: none;
+        .secret-stamp {
+            position: absolute; top: 10px; right: 10px;
+            color: rgba(255, 0, 0, 0.3); font-family: 'Black Ops One';
+            font-size: 2rem; transform: rotate(-15deg); pointer-events: none;
         }
 
-        h1 {
-            color: var(--neon-red);
-            text-align: center;
-            font-family: 'Black Ops One';
-            letter-spacing: 3px;
-            border-bottom: 2px dashed var(--neon-red);
-            padding-bottom: 20px;
+        h1 { font-family: 'Black Ops One'; color: #ffaa00; text-align: center; font-size: 2.5rem; }
+        h2 { font-family: 'Black Ops One'; color: #fff; margin-top: 0; }
+        p { line-height: 1.6; color: #ccc; }
+
+        .spoiler-alert {
+            background: #ffaa00; color: #000; padding: 10px; text-align: center;
+            font-weight: bold; border-radius: 5px; margin-bottom: 30px;
         }
 
-        .leak-card {
-            background: rgba(20, 0, 0, 0.3);
-            border-left: 3px solid var(--neon-red);
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        .leak-date { color: var(--neon-red); font-weight: bold; font-size: 0.8rem; }
-        .leak-title { color: #fff; font-size: 1.4rem; margin: 5px 0 15px 0; font-weight: bold; }
-        .leak-content { line-height: 1.6; font-size: 0.95rem; }
-
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #888;
-            text-decoration: none;
-            border: 1px solid #444;
-            padding: 5px 15px;
-        }
-        .back-btn:hover { background: #222; color: #fff; }
-
-        .blur-spoiler {
-            filter: blur(5px);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .blur-spoiler:hover, .blur-spoiler.revealed { filter: blur(0); }
-
-        /* FOOTER */
+        /* FOOTER STYLES */
         footer {
             background: #000;
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #222;
+            font-size: 0.9rem;
+            color: #666;
             margin-top: 50px;
-            font-family: 'Roboto', sans-serif; /* Vuelta a fuente normal para el footer */
         }
         footer a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        footer a:hover { color: #fff; }
-
+        footer a:hover { color: var(--primary); }
+        
         .report-btn {
             display: inline-block; margin-top: 20px; padding: 10px 20px;
-            border: 1px solid var(--neon-red); border-radius: 5px;
-            color: var(--neon-red) !important; font-weight: bold;
-            background: rgba(255, 51, 51, 0.1); font-family: 'Black Ops One', sans-serif;
+            border: 1px solid var(--danger); border-radius: 5px;
+            color: var(--danger) !important; font-weight: bold;
+            background: rgba(255, 68, 68, 0.05); font-family: 'Black Ops One', sans-serif;
             letter-spacing: 1px;
         }
-        .report-btn:hover { background: var(--neon-red); color: #000 !important; }
-
+        .report-btn:hover { background: var(--danger); color: #000 !important; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="top-secret-stamp">CONFIDENCIAL</div>
+        <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
         
-        <a href="index.html" class="back-btn">[ REGRESAR A LA BASE ]</a>
-
-        <h1>REGISTRO DE FILTRACIONES</h1>
-
-        <div style="background: #111; color: #444; padding: 20px; text-align: center; border: 1px dashed #333; margin-bottom: 20px;">
-            ADSENSE BLOQUE DE ANUNCIOS
-        </div>
-
-        <div class="leak-card">
-            <div class="leak-date">FECHA: 2025-12-05</div>
-            <div class="leak-title">NUEVA ARMA: ISO (Subfusil)</div>
-            <div class="leak-content">
-                <p>Archivos del juego sugieren la llegada del subfusil ISO para la próxima temporada. Cadencia extremadamente alta, daño moderado.</p>
-                <p><strong>Veredicto:</strong> Posible meta a corta distancia.</p>
-            </div>
-        </div>
-
-        <div class="leak-card">
-            <div class="leak-date">FECHA: 2025-12-03</div>
-            <div class="leak-title">RULETA MÍTICA: Grau 5.56 - Phantom's Core</div>
-            <div class="leak-content">
-                <p>Se ha encontrado el modelo 3D de la nueva mítica. <span class="blur-spoiler" onclick="this.classList.add('revealed')">(Haz clic para revelar) Incluye mira de hierro digital similar a la Kilo 141.</span></p>
-            </div>
-        </div>
+        <h1>ARCHIVO DE FILTRACIONES</h1>
         
-        <div class="leak-card">
-            <div class="leak-date">FECHA: 2025-12-01</div>
-            <div class="leak-title">MAPA: Checkmate (Remasterizado)</div>
-            <div class="leak-content">
-                <p>Referencias a una versión nocturna del mapa Checkmate para el modo ByD.</p>
-            </div>
+        <div class="spoiler-alert">⚠ ALERTA DE SPOILER: El contenido a continuación no ha sido confirmado oficialmente.</div>
+
+        <div style="width: 100%; height: 100px; background: #111; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #555;">ESPACIO ADSENSE</div>
+
+        <div class="secret-file">
+            <div class="secret-stamp">CONFIDENCIAL</div>
+            <h2>Nueva Mítica: Grau 5.56</h2>
+            <p>Según los archivos datamineados de la versión china, la próxima arma en recibir una skin Mítica será la Grau 5.56. Se espera que tenga una temática "Cyberpunk" con efectos de muerte que pixelan al enemigo.</p>
+            <p><strong>Fecha estimada:</strong> Mitad de temporada (Viernes 20).</p>
         </div>
 
+        <div class="secret-file">
+            <div class="secret-stamp">RUMOR</div>
+            <h2>Colaboración con Anime</h2>
+            <p>Se han encontrado referencias en el código fuente sobre una posible segunda colaboración con "Girls Frontline" o una nueva IP de anime. Las cajas de suministros sugieren skins para la QQ9 y el Kilo 141.</p>
+        </div>
     </div>
 
     <footer>
@@ -164,18 +124,50 @@
         </p>
         <div style="max-width: 800px; margin: 0 auto;">
             <div style="border-top: 1px solid #333; padding-top: 20px;">
-                <a href="index.html">Inicio</a> | 
-                <a href="sobre.html">Sobre Nosotros</a> | 
-                <a href="contacto.html">Contacto</a> | 
-                <a href="privacidad.html">Privacidad</a>
+                <a href="privacidad.html">Política de Privacidad</a> | 
+                <a href="guias.html">Guías</a>
             </div>
             <br>
             <a href="mailto:feliperico080@gmail.com?subject=Reporte%20Error%20Web%20CODM" class="report-btn">
                 ⚠ Reportar Error
             </a>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">© 2025 CODM Contador.</p>
+            <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador.</p>
         </div>
     </footer>
 
+    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
+        <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
+        <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
+            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
+            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+                Rechazar Todo
+            </button>
+            <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
+                Aceptar Cookies
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function checkCookies() {
+            if (!localStorage.getItem("cookieConsent")) {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem("cookieConsent", "accepted");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+        function rejectCookies() {
+            localStorage.setItem("cookieConsent", "rejected");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+        window.onload = function() {
+            checkCookies();
+        };
+    </script>
 </body>
 </html>
