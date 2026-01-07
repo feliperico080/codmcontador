@@ -64,6 +64,28 @@
             padding: 0 20px;
         }
 
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.8);
+    color: var(--primary);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-family: 'Black Ops One', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.back-btn:hover {
+    background: var(--primary);
+    color: #000;
+    transform: translateX(-5px);
+}
         /* Estilos específicos para las Clases de Armas */
         .page-title {
             font-family: 'Black Ops One';
@@ -170,6 +192,7 @@
     </nav>
 
     <div class="container">
+<a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
         <h1 class="page-title">META ACTUAL: TEMPORADA 11</h1>
         <p class="intro-text">
             Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas. Si quieres subir a Leyenda en Multijugador, estas son las herramientas que necesitas dominar esta semana.
