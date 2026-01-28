@@ -21,7 +21,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
-            --primary: #ffaa00;
+            --primary: #ffaa00; /* Dorado */
+            --highlight: #00e5ff; /* Cian para negritas */
+            --text-light: #f5f5f5; /* Blanco casi puro para lectura */
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.95);
             --border: #333;
@@ -31,7 +33,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark);
-            color: #e0e0e0;
+            color: var(--text-light);
             margin: 0;
             padding: 0;
             background-image: url('police-1282330_1280.jpg'); 
@@ -40,6 +42,44 @@
             background-attachment: fixed;
         }
 
+        /* MEJORA DE LECTURA: Contenedor para el artículo de texto */
+        .readable-panel {
+            background: rgba(10, 10, 10, 0.9); /* Fondo oscuro para leer mejor */
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+
+        /* Estilos de Tipografía mejorados */
+        h2, h3 {
+            font-family: 'Black Ops One', sans-serif;
+            color: var(--primary); /* Títulos en Dorado */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; color: #fff; border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 30px;}
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-light); /* Texto blanco legible */
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--highlight); /* Negritas en Cian */
+            font-weight: 700;
+        }
+
+        li { margin-bottom: 10px; line-height: 1.6; }
+
+        /* Resto de estilos originales */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -223,21 +263,43 @@
     </nav>
 
     <div class="container">
-
-
         <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
         
         <h1 class="page-title">META ACTUAL: TEMPORADA 11</h1>
         <p class="intro-text">
-            Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas. Si quieres subir a Leyenda en Multijugador, estas son las herramientas que necesitas dominar esta semana.
+            Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas.
         </p>
 
+        <article class="readable-panel">
+            <h2>Análisis del Meta: ¿Por qué la BP50 sigue dominando?</h2>
+            
+            <p>Seamos sinceros: todos esperábamos que Activision nerfeara la <strong>BP50</strong> hasta el suelo en esta actualización. Pero, para sorpresa de muchos, el arma sigue siendo una bestia absoluta. He estado probando diferentes configuraciones en partidas de <strong>rango Leyenda</strong> durante los últimos tres días y la conclusión es clara: si no la usas, estás en desventaja.</p>
+
+            <h3>¿Qué hace que esta arma esté rota?</h3>
+            <p>El problema no es solo su cadencia. Lo que realmente la hace "Meta" es su versatilidad. A diferencia de una Fennec, la BP50 mantiene un <strong>TTK (Time To Kill)</strong> ridículamente bajo a medias distancias. Es básicamente un subfusil disfrazado de fusil de asalto.</p>
+
+            <h3>La Clase Definitiva para Ranked</h3>
+            <p>Si quieres ganar puntos y subir, necesitas consistencia. Esta es la configuración que estoy usando para controlar los puntos calientes en mapas como Standoff y Raid:</p>
+            
+            <ul>
+                <li><strong>Cañón:</strong> Leroy 438mm Rapid (Clave para esa cadencia extra).</li>
+                <li><strong>Culata:</strong> Moison (Movilidad para pre-aim).</li>
+                <li><strong>Munición:</strong> Cargador grande de 60 balas. (Obligatorio).</li>
+                <li><strong>Empuñadura Trasera:</strong> Polímero punteado.</li>
+                <li><strong>Ventaja:</strong> Desactivar (Opcional contra snipers).</li>
+            </ul>
+
+            <hr style="border-color: #333; margin: 30px 0;">
+
+            <h2>La DR-H: El viejo confiable</h2>
+            <p>Si prefieres precisión, la <strong>DR-H</strong> sigue siendo top tier con su munición especial <strong>OTM</strong>. Sin ese accesorio, el arma no pega lo suficiente. La clave es el posicionamiento: mantén distancias y usa coberturas. Con 3 balas al pecho bajas a cualquiera.</p>
+        </article>
         <div style="width: 100%; height: 100px; background-color: #111; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #555;">
             ESPACIO ADSENSE (BANNER)
         </div>
 
         <div class="loadout-card" style="border-color: #ff4444;">
-            <h2 class="weapon-name">
+            <h2 class="weapon-name" style="border-bottom-color: #ff4444;">
                 BP50
                 <span class="weapon-type" style="background: #ff4444; color: #000;">META ABSOLUTO</span>
             </h2>
@@ -245,7 +307,7 @@
             
             <div class="strategy-box" style="border-left-color: #ff4444; background: rgba(255, 68, 68, 0.05);">
                 <p><strong>La Reina de la Cadencia:</strong><br>
-                Actualmente, la <strong>BP50</strong> domina el juego en rangos Leyenda y Top 5000. Su cadencia de fuego es tan alta que supera a la mayoría de subfusiles en el combate cercano, manteniendo la precisión de un fusil de asalto a media distancia.</p>
+                Actualmente, la <strong>BP50</strong> domina el juego en rangos Leyenda y Top 5000. Su cadencia de fuego es tan alta que supera a la mayoría de subfusiles.</p>
             </div>
             
             <div class="attachments-grid">
@@ -266,7 +328,7 @@
             
             <div class="strategy-box">
                 <p><strong>El Terror de Garena:</strong><br>
-                Para los jugadores agresivos que dominan el movimiento avanzado, la KRM-262 es letal. Esta configuración maximiza la densidad de perdigones desde la cadera y garantiza bajas de un solo disparo (One-Tap) a corta distancia.</p>
+                Para los jugadores agresivos que dominan el movimiento avanzado. Esta configuración garantiza bajas de un solo disparo (One-Tap).</p>
             </div>
             
             <div class="attachments-grid">
@@ -287,7 +349,7 @@
             
             <div class="strategy-box">
                 <p><strong>¿Por qué está en el Meta?</strong><br>
-                La DR-H sigue siendo la reina del alcance medio gracias a su munición especial OTM. A pesar de los recientes ajustes, su capacidad para eliminar enemigos de 3 disparos en el pecho la convierte en la opción favorita de los profesionales.</p>
+                La DR-H sigue siendo la reina del alcance medio gracias a su munición especial OTM. Elimina enemigos de 3 disparos.</p>
             </div>
             
             <div class="attachments-grid">
@@ -308,7 +370,7 @@
             
             <div class="strategy-box">
                 <p><strong>Estrategia de Uso:</strong><br>
-                Si tu estilo de juego es agresivo (Rusher), la Fennec es indiscutible. Tiene la cadencia de disparo más alta del juego. Esta clase está optimizada para reducir la dispersión de bala desde la cadera y mejorar la velocidad de movimiento.</p>
+                Si tu estilo de juego es agresivo (Rusher), la Fennec es indiscutible. Tiene la cadencia de disparo más alta del juego.</p>
             </div>
             
             <div class="attachments-grid">
@@ -329,7 +391,7 @@
             
             <div class="strategy-box">
                 <p><strong>El Rey de los Snipers:</strong><br>
-                Aunque el Tundra ha ganado popularidad, el DL Q33 mantiene su consistencia con un "Hitbox" letal muy generoso. Esta configuración busca maximizar la velocidad de apuntado (ADS Speed) para permitir el "Quickscope".</p>
+                El DL Q33 mantiene su consistencia con un "Hitbox" letal muy generoso. Configuración optimizada para "Quickscope".</p>
             </div>
             
             <div class="attachments-grid">
@@ -342,9 +404,9 @@
         </div>
 
         <div style="margin-top: 40px; background: #222; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
-            <h3 style="color: #fff; margin-top: 0;">Nota sobre el equilibrio de armas</h3>
+            <h3 style="color: #fff; margin-top: 0; border:none; padding:0;">Nota sobre el equilibrio de armas</h3>
             <p style="color: #aaa; margin-bottom: 0;">
-                Estas clases están actualizadas a la fecha actual. Activision suele modificar las estadísticas de las armas a mitad de temporada. Revisa esta página cada viernes.
+                Estas clases están actualizadas a la fecha actual. Activision suele modificar las estadísticas de las armas a mitad de temporada.
             </p>
         </div>
 
@@ -370,10 +432,10 @@
     </footer>
 
     <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
-        <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
+        <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif; border:none;">🍪 Configuración de Cookies</h3>
         <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
-            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
-            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
+            Usamos cookies propias y de terceros para mejorar tu experiencia. 
+            <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
         </p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
             <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">

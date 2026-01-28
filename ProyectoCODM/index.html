@@ -46,6 +46,7 @@
             background-attachment: fixed;
         }
 
+        /* NAVEGACIÓN ACTUALIZADA */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -59,12 +60,45 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between; /* Separar logo de enlaces */
             align-items: center;
             padding: 0 20px;
+            flex-wrap: wrap; /* Para móviles */
         }
-        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-transform: uppercase; }
+        .logo { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.5rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            text-decoration: none;
+        }
         .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* MEDIA QUERY PARA MOVIL */
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            h1 { font-size: 2rem; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+            .number { font-size: 2rem; }
+        }
 
         .container {
             max-width: 900px;
@@ -101,7 +135,7 @@
             align-items: center;
             gap: 8px;
             background: #000;
-            color: #44ff44; /* Verde neón más brillante */
+            color: #44ff44; 
             padding: 8px 20px;
             border-radius: 50px;
             font-weight: bold;
@@ -110,7 +144,7 @@
             border: 1px solid #44ff44;
             text-transform: uppercase;
             box-shadow: 0 0 10px rgba(68, 255, 68, 0.2);
-            animation: pulse-green 2s infinite; /* Aquí está la magia */
+            animation: pulse-green 2s infinite; 
         }
 
         .countdown-grid {
@@ -232,14 +266,13 @@
         footer a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
         footer a:hover { color: var(--primary); }
 
-        /* ESTILO DEL NUEVO BOTÓN DE REPORTE */
         .report-btn {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
             border: 1px solid var(--danger);
             border-radius: 5px;
-            color: var(--danger) !important; /* Forza el color rojo */
+            color: var(--danger) !important;
             font-weight: bold;
             background: rgba(255, 68, 68, 0.05);
             font-family: 'Black Ops One', sans-serif;
@@ -252,18 +285,20 @@
             transform: scale(1.02);
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
-            .number { font-size: 2rem; }
-        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">CODM <span>CONTADOR</span></div>
+            <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="clases.html">Clases</a>
+                <a href="guias.html">Guías</a>
+                <a href="filtraciones.html">Filtraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
         </div>
     </nav>
 
@@ -396,14 +431,12 @@
         </div>
 
         <div class="content-box">
-    <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis y Herramientas para Call of Duty Mobile</h2>
-    
-    <p style="color: #44ff44; font-weight: bold; font-size: 0.9rem; margin-top: -10px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-        ✅ Última actualización: Enero 2026 | Estado: Confirmado para S11
-    </p>
-    <p>
-        Bienvenidos a <strong>CODM Contador</strong>, el portal de referencia para la comunidad hispana. Nuestra misión es centralizar la información dispersa sobre las actualizaciones de Activision y TiMi Studios...
-    </p>
+            <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis y Herramientas para Call of Duty Mobile</h2>
+            
+            <p style="color: #44ff44; font-weight: bold; font-size: 0.9rem; margin-top: -10px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                ✅ Última actualización: Enero 2026 | Estado: Confirmado para S11
+            </p>
+            <p>
                 Bienvenidos a <strong>CODM Contador</strong>, el portal de referencia para la comunidad hispana. Nuestra misión es centralizar la información dispersa sobre las actualizaciones de Activision y TiMi Studios, ofreciendo herramientas precisas como nuestro <strong>contador de temporada</strong> y guías de optimización.
             </p>
 
@@ -457,12 +490,12 @@
             <p style="margin-bottom: 20px; font-weight: bold; color: #fff; font-size: 1.2rem; font-family: 'Black Ops One';">CODM CONTADOR</p>
             <p style="margin-bottom: 20px;">Somos un sitio web creado por fans para fans. No estamos afiliados con Activision ni TiMi Studios. Nuestro propósito es informar y ayudar a la comunidad a mejorar su nivel de juego.</p>
             
-          <div style="border-top: 1px solid #333; padding-top: 20px;">
-    <a href="index.html">Inicio</a> | 
-    <a href="sobre.html">Sobre Nosotros</a> | 
-    <a href="contacto.html">Contacto</a> | 
-    <a href="privacidad.html">Privacidad</a>
-</div>
+            <div style="border-top: 1px solid #333; padding-top: 20px;">
+                <a href="index.html">Inicio</a> | 
+                <a href="sobre.html">Sobre Nosotros</a> | 
+                <a href="contacto.html">Contacto</a> | 
+                <a href="privacidad.html">Privacidad</a>
+            </div>
             <br>
             <a href="mailto:feliperico080@gmail.com?subject=Reporte%20Error%20Web%20CODM" class="report-btn">
                 ⚠ Reportar Error en la Página
@@ -503,19 +536,15 @@
     </script>
 
     <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
-        
         <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
-        
         <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
             Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
             Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
         </p>
-
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
             <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
                 Rechazar Todo
             </button>
-            
             <button onclick="acceptCookies()" style="background: #ffaa00; border: 1px solid #ffaa00; color: #000; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); transition: 0.3s;">
                 Aceptar Cookies
             </button>
@@ -523,27 +552,21 @@
     </div>
 
     <script>
-        // Lógica inteligente de Cookies
         function checkCookies() {
             if (!localStorage.getItem("cookieConsent")) {
                 document.getElementById("cookie-banner").style.display = "block";
             }
         }
-
         function acceptCookies() {
             localStorage.setItem("cookieConsent", "accepted");
             document.getElementById("cookie-banner").style.display = "none";
         }
-
         function rejectCookies() {
             localStorage.setItem("cookieConsent", "rejected");
             document.getElementById("cookie-banner").style.display = "none";
         }
-
-        // Iniciar chequeo al cargar (CON CUIDADO DE NO ROMPER EL RELOJ)
         window.onload = function() {
             checkCookies();
-            // Esta línea es vital para que el reloj del Index siga funcionando:
             if(typeof updateTimer === 'function') updateTimer(); 
         };
     </script>

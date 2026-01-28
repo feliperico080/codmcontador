@@ -20,39 +20,62 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
         
         :root {
-            --primary: #ffaa00;
+            --primary: #ffaa00; /* Dorado */
+            --highlight: #00e5ff; /* Cian para negritas */
             --danger: #ff4444;
             --success: #44ff44;
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.95);
+            --text-light: #f5f5f5;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark);
-            color: #ccc;
+            color: var(--text-light);
             margin: 0;
-            padding: 20px; /* Restaurado el padding original */
+            padding: 0;
             background-image: url('police-1282330_1280.jpg');
             background-size: cover;
             background-attachment: fixed;
+            background-position: center;
         }
+
+        /* BARRA DE NAVEGACIÓN (OBLIGATORIO PARA ADSENSE) */
+        .navbar {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo span { color: var(--primary); }
 
         .container {
             max-width: 900px;
             margin: 40px auto;
-            display: grid;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
             gap: 30px;
-            /* Padding lateral eliminado porque ya lo tiene el body */
         }
 
-        .header-box {
-            background: var(--card-bg);
+        /* PANEL DE LECTURA MEJORADO */
+        .readable-panel {
+            background: rgba(10, 10, 10, 0.9);
             padding: 30px;
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 15px;
             border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
         }
 
         h1 {
@@ -62,6 +85,30 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+        }
+
+        h2, h3 {
+            font-family: 'Black Ops One', sans-serif;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-top: 25px;
+        }
+
+        p { line-height: 1.6; font-size: 1.05rem; color: #ddd; }
+        
+        strong { color: var(--highlight); }
+
+        /* Estilos de las Tarjetas de Filtraciones */
+        .header-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
         }
 
         .leak-card {
@@ -70,19 +117,21 @@
             padding: 25px;
             border-radius: 8px;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .leak-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 170, 0, 0.1);
+            border-color: var(--highlight);
         }
 
         .leak-title {
-            font-family: 'Black Ops One';
             color: #fff;
             font-size: 1.5rem;
             margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
         .tag {
@@ -104,6 +153,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .meter {
@@ -122,55 +174,71 @@
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            width: 100%;
             padding: 15px;
             background: rgba(0,0,0,0.5);
-            border-radius: 8px;
+            border-radius: 50px;
+            border: 1px solid var(--primary);
+            transition: 0.3s;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .btn-back:hover { background: var(--primary); color: #000; }
 
-        /* ESTILOS PARA EL FOOTER NEGRO SÓLIDO (MANTENIDO) */
+        /* FOOTER */
         footer {
-            background-color: #000000 !important; /* Negro sólido forzado */
+            background-color: #000 !important;
             margin-top: 60px;
             padding: 40px 20px;
             text-align: center;
             border-top: 2px solid var(--primary);
             font-size: 0.9rem;
             color: #666;
-            position: relative;
-            z-index: 10;
-            /* Para asegurar que cubra el ancho completo aunque el body tenga padding */
-            margin-left: -20px;
-            margin-right: -20px;
-            margin-bottom: -20px; 
         }
+        footer a { color: #888; text-decoration: none; transition: 0.3s; margin: 0 5px;}
+        footer a:hover { color: var(--primary); }
 
         #cookie-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.95);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
-            z-index: 1000;
-            display: none;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            border: 1px solid var(--primary);
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(15, 15, 15, 0.95); color: white; padding: 25px;
+            border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            z-index: 1000; display: none; width: 90%; max-width: 500px;
+            text-align: center; border: 1px solid #333; backdrop-filter: blur(10px);
         }
     </style>
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+        </div>
+    </nav>
+
     <div class="container">
+        
+        <a href="index.html" class="btn-back">⬅ Volver al Inicio</a>
+
+        <article class="readable-panel">
+            <h2>Filtraciones S12: ¿Vale la pena gastar en la próxima Mítica?</h2>
+            
+            <p>Los mineros de datos ya han hecho su trabajo y tenemos los primeros vistazos de lo que se viene para el cierre de año en <strong>Call of Duty Mobile</strong>. Y voy a ser directo con ustedes: preparen la billetera o empiecen a ahorrar, porque lo que viene no es barato, pero se ve increíble.</p>
+
+            <h3>El regreso de las colaboraciones</h3>
+            <p>Se rumorea fuerte una segunda parte de colaboraciones con animes populares. Esto siempre divide a la comunidad. Están los <strong>"milsim"</strong> que odian ver personajes coloridos corriendo por el mapa, y estamos los que disfrutamos de las skins llamativas. Personalmente, creo que mientras la skin no tenga una ventaja injusta (como esas miras de hierro <strong>"pay-to-win"</strong>), bienvenida sea.</p>
+
+            <h3>¿Armas de prestigio o reciclaje?</h3>
+            <p>Una preocupación que tengo con las filtraciones recientes es la cantidad de "recolors" que estamos viendo. <strong>Activision</strong> parece estar probando hasta dónde pueden estirar la cuerda reciclando modelos viejos con nuevas texturas. Mi consejo: No compren cajas el primer día. Esperen a ver las reviews en YouTube.</p>
+
+            <div style="background: rgba(255, 170, 0, 0.1); padding: 10px; border-left: 3px solid var(--primary); margin-top: 20px;">
+                <p style="margin:0; font-size: 0.9rem;">📢 <strong>Actualización:</strong> Estaremos actualizando esta sección apenas se confirmen los precios oficiales en CP para Latinoamérica.</p>
+            </div>
+        </article>
+
         <div class="header-box">
             <h1>Zona de Filtraciones</h1>
-            <p style="color: #888;">Archivos desencriptados del Servidor de Pruebas (Test Server)</p>
-            <p style="color: var(--primary); font-size: 0.9rem;">⚠ Nota: Todo el contenido está sujeto a cambios por parte de Activision.</p>
+            <p style="color: #bbb;">Archivos desencriptados del Servidor de Pruebas (Test Server)</p>
+            <p style="color: var(--danger); font-size: 0.9rem; font-weight: bold;">⚠ Nota: Todo el contenido está sujeto a cambios.</p>
         </div>
 
         <div class="leak-card">
@@ -188,7 +256,7 @@
             <span class="tag" style="background: var(--danger); color: white;">RUMOR FUERTE</span>
             <h2 class="leak-title">¿Nueva Mítica o Retorno?</h2>
             <p>Los dataminers han encontrado referencias a una "Redux Draw" (Ruleta Reciclada) muy esperada. Todo apunta al retorno de la <strong>Kilo 141 - Demonsong</strong> o la <strong>Switchblade X9</strong>.</p>
-            <p>Además, se especula con una nueva arma mítica para la categoría de <strong>Tirador (Marksman)</strong>, posiblemente para la SKS o la Koshka, con efectos de muerte relacionados con agujeros negros.</p>
+            <p>Además, se especula con una nueva arma mítica para la categoría de <strong>Tirador (Marksman)</strong>, posiblemente para la SKS o la Koshka.</p>
             <div class="reliability">
                 Fiabilidad: <span style="color: #ffaa00">75%</span>
                 <div class="meter"><span class="fill" style="width: 75%; background: #ffaa00;"></span></div>
@@ -211,31 +279,28 @@
 
         <div class="leak-card">
             <span class="tag">GAMEPLAY</span>
-            <h2 class="leak-title">Nerfeos y Bufuos Esperados</h2>
-            <p>La comunidad competitiva ha pedido cambios drásticos. Se espera un <strong>nerfeo a la BP50</strong> (reducción de alcance) y una mejora significativa a las escopetas en Battle Royale para hacer frente a la clase Igniter.</p>
+            <h2 class="leak-title">Nerfeos y Buffs Esperados</h2>
+            <p>La comunidad competitiva ha pedido cambios drásticos. Se espera un <strong>nerfeo a la BP50</strong> (reducción de alcance) y una mejora significativa a las escopetas en Battle Royale.</p>
             <div class="reliability">
                 Fiabilidad: <span style="color: var(--success)">90%</span>
                 <div class="meter"><span class="fill" style="width: 90%; background: var(--success);"></span></div>
             </div>
         </div>
 
-        <a href="index.html" class="btn-back">⬅ Volver al Inicio</a>
-    </div>
-
-    <footer>
+    </div> <footer>
         <p>© 2025 CODM Contador - Fan Site no oficial.</p>
         <p>
-            <a href="contacto.html" style="color: #888; text-decoration: none;">Contacto</a> | 
-            <a href="sobre.html" style="color: #888; text-decoration: none;">Sobre Nosotros</a> |
-            <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>
+            <a href="contacto.html">Contacto</a> | 
+            <a href="sobre.html">Sobre Nosotros</a> |
+            <a href="privacidad.html">Política de Privacidad</a>
         </p>
-        <p style="font-size: 0.75rem; margin-top: 20px;">
+        <p style="font-size: 0.75rem; margin-top: 20px; color: #444;">
             Disclaimer: Call of Duty® Mobile es una marca registrada de Activision Publishing, Inc. Este sitio web no está afiliado, respaldado ni patrocinado por Activision.
         </p>
     </footer>
 
     <div id="cookie-banner">
-        <h3 style="color: #ffaa00; margin-top: 0;">🍪 Control de Misión (Cookies)</h3>
+        <h3 style="color: #ffaa00; margin-top: 0; font-family: 'Black Ops One';">🍪 Control de Misión</h3>
         <p style="font-size: 0.9rem; color: #ccc;">
             Usamos cookies para mejorar tu experiencia y analizar nuestro tráfico.
         </p>

@@ -20,30 +20,52 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
-            --primary: #ffaa00;
+            --primary: #ffaa00; /* Dorado */
+            --highlight: #00e5ff; /* Cian */
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.95);
             --danger: #ff4444;
+            --text-light: #f5f5f5;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark);
-            color: #e0e0e0;
+            color: var(--text-light);
             margin: 0;
             padding: 0;
             background-image: url('police-1282330_1280.jpg'); 
             background-size: cover;
             background-attachment: fixed;
+            background-position: center;
         }
 
+        /* NAVBAR */
+        .navbar {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo span { color: var(--primary); }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* ESTILO DEL BOTÓN DE VOLVER */
+        /* BOTÓN VOLVER */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -67,26 +89,65 @@
             transform: translateX(-5px);
         }
 
+        /* PANEL DE LECTURA (TEXTO LARGO) */
+        .readable-panel {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+
+        /* TARJETAS DE GUÍAS TÉCNICAS */
         .guide-article {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 30px;
             border-left: 4px solid var(--primary);
-            border: 1px solid #333;
+            border: 1px solid #333; /* Borde sutil alrededor */
+            border-left-width: 4px; /* Mantener el borde izquierdo grueso */
+            transition: transform 0.2s;
         }
+        .guide-article:hover { transform: translateX(5px); }
 
-        h1 { font-family: 'Black Ops One'; font-size: 2.5rem; color: #fff; text-align: center; margin-bottom: 40px; }
-        h2 { font-family: 'Black Ops One'; color: var(--primary); border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
-        h3 { color: #fff; margin-top: 25px; }
-        p, li { line-height: 1.7; color: #ccc; }
+        /* TIPOGRAFÍA */
+        h1 { 
+            font-family: 'Black Ops One'; 
+            font-size: 2.5rem; 
+            color: var(--primary); 
+            text-align: center; 
+            margin-bottom: 40px; 
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
+        }
         
+        h2 { 
+            font-family: 'Black Ops One'; 
+            color: var(--primary); 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 10px; 
+            margin-top: 0; 
+            font-size: 1.8rem;
+        }
+        
+        h3 { 
+            color: #fff; 
+            margin-top: 25px; 
+            font-size: 1.3rem;
+            border-left: 3px solid var(--highlight);
+            padding-left: 10px;
+        }
+        
+        p, li { line-height: 1.7; color: #ddd; font-size: 1.05rem; }
+        strong { color: var(--highlight); }
+
         .tip-box {
-            background: rgba(255, 170, 0, 0.1);
+            background: rgba(0, 229, 255, 0.1); /* Fondo azulado muy suave */
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
-            border: 1px dashed var(--primary);
+            border: 1px dashed var(--highlight);
             color: #eee;
         }
 
@@ -109,23 +170,58 @@
             letter-spacing: 1px;
         }
         .report-btn:hover { background: var(--danger); color: #000 !important; }
+
+        #cookie-banner {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(15, 15, 15, 0.95); color: white; padding: 25px;
+            border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            z-index: 9999; display: none; width: 90%; max-width: 600px; text-align: center; backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+        </div>
+    </nav>
+
     <div class="container">
         <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
 
-        <h1>ACADEMIA CODM</h1>
+        <h1>ACADEMIA & MENTALIDAD</h1>
+
+        <article class="readable-panel">
+            <h2>Más allá del Aim: Cómo mejorar tu "Game Sense"</h2>
+            
+            <p>Llevo jugando CODM desde la beta de 2019 y si hay algo que diferencia a un jugador "Maestro" de un "Leyenda Top 5000" no es la puntería. He visto gente con una puntería mediocre destrozar lobbies enteros. ¿El secreto? <strong>Entienden el juego.</strong> Entienden los spawns. Entienden cuándo desafiar y cuándo huir.</p>
+
+            <h3>El error número 1: Regalar las kills</h3>
+            <p>Seguro te ha pasado: matas a uno, te emocionas, sales corriendo a buscar al siguiente y te matan desde una esquina. Eso es jugar sin cabeza. En modos como Duelo por Equipos o Primera Línea, cada vez que mueres le estás regalando puntos al rival. La regla de oro es: <em>"Si no sabes dónde están los enemigos, asume que te están apuntando"</em>.</p>
+
+            <h3>Domina las rotaciones en Punto Caliente</h3>
+            <p>Este es el consejo que te cambiará la vida: <strong>Deja de pelear por el punto cuando faltan 10 segundos.</strong> Es inútil. Si el punto actual está perdido y queda poco tiempo, tu trabajo no es ir a morir allí. Tu trabajo es correr al SIGUIENTE punto y asegurar la posición.</p>
+            <p>Si llegas al nuevo punto 15 segundos antes que el enemigo, puedes poner tus trophys, tomar una buena posición detrás de un headglitch y esperarlos. Ellos vendrán corriendo desesperados y tú tendrás toda la ventaja. Ganar en Hardpoint es <strong>80% posición y 20% disparos.</strong></p>
+
+            <h3>Configuración de sensibilidad: ¿Alta o Baja?</h3>
+            <p>No copies la sensibilidad de los youtubers famosos. Ellos juegan en iPad con 6 dedos. Si juegas en celular con pulgares, necesitas encontrar tu propio equilibrio. Mi recomendación para empezar:</p>
+            <ul>
+                <li>Baja la <strong>sensibilidad de cámara</strong> (estándar) para poder girar 180 grados con un solo deslizamiento de dedo.</li>
+                <li>Baja la <strong>sensibilidad de apuntado (ADS)</strong> para tener precisión a largas distancias.</li>
+            </ul>
+        </article>
 
         <div style="width: 100%; height: 100px; background-color: #111; border: 1px dashed #444; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; color: #555;">
             ESPACIO ADSENSE (BANNER)
         </div>
 
+        <h2 style="text-align: center; color: #fff; border:none; margin-bottom: 30px; font-size: 2rem; font-family: 'Black Ops One';">GUÍAS TÉCNICAS</h2>
+
         <article class="guide-article">
             <h2>Guía de Movimiento: Domina el "Slide Cancel"</h2>
             <p>
-                El movimiento es lo que separa a un jugador novato de un Leyenda. En Call of Duty Mobile, el "Slide Cancel" (Cancelar el deslizamiento) es la técnica fundamental para resetear tu sprint táctico y hacerte un objetivo difícil de acertar.
+                El movimiento es lo que separa a un jugador novato de un Leyenda. En Call of Duty Mobile, el <strong>"Slide Cancel"</strong> (Cancelar el deslizamiento) es la técnica fundamental para resetear tu sprint táctico y hacerte un objetivo difícil de acertar.
             </p>
             <h3>¿Cómo hacerlo correctamente?</h3>
             <ol>
@@ -145,14 +241,14 @@
             </p>
             <h3>Velocidad Fija (Fixed Speed)</h3>
             <p>
-                Es la opción preferida por los jugadores de competitivo. Al usar velocidad fija, tu personaje girará la misma distancia sin importar qué tan rápido muevas el dedo. Esto permite desarrollar "memoria muscular", haciendo que tus "flicks" (giros rápidos) sean siempre precisos.
+                Es la opción preferida por los jugadores de competitivo. Al usar velocidad fija, tu personaje girará la misma distancia sin importar qué tan rápido muevas el dedo. Esto permite desarrollar <strong>"memoria muscular"</strong>, haciendo que tus "flicks" (giros rápidos) sean siempre precisos.
             </p>
         </article>
 
         <article class="guide-article">
             <h2>Entendiendo los Spawns (Reapariciones)</h2>
             <p>
-                En modos como Punto Caliente (Hardpoint), ganar no depende solo de matar, sino de controlar dónde reaparecen los enemigos. Si tu equipo empuja demasiado hacia la base enemiga, forzarás un "Flip" (cambio de respawn), lo que puede hacer que los enemigos aparezcan detrás de ti.
+                En modos como Punto Caliente (Hardpoint), ganar no depende solo de matar, sino de controlar dónde reaparecen los enemigos. Si tu equipo empuja demasiado hacia la base enemiga, forzarás un <strong>"Flip"</strong> (cambio de respawn), lo que puede hacer que los enemigos aparezcan detrás de ti.
             </p>
             <p>
                 <strong>Regla de oro:</strong> Mantén siempre a un jugador "ancla" en la parte trasera del punto para asegurar que tu equipo reaparezca cerca del objetivo.
@@ -162,23 +258,23 @@
         <article class="guide-article" style="border-left-color: #44ff44;">
             <h2 style="color: #44ff44;">Estrategia: El Combo de Rachas Perfecto</h2>
             <p>
-                Muchos jugadores cometen el error de equipar rachas muy costosas (como el VTOL o el Enjambre) que rara vez logran sacar en partidas igualadas (SBMM). Para subir a Leyenda, la consistencia es clave. Aquí te presentamos dos configuraciones según tu rol.
+                Muchos jugadores cometen el error de equipar rachas muy costosas (como el VTOL) que rara vez logran sacar. Para subir a Leyenda, la consistencia es clave.
             </p>
 
             <h3 style="color: #ffaa00;">1. El "Support" (Ayuda al Equipo)</h3>
-            <p>Ideal para modos de objetivo como Dominio o Punto Caliente. Tu misión es limpiar el cielo y dar información.</p>
+            <p>Ideal para modos de objetivo como Dominio o Punto Caliente.</p>
             <ul style="background: rgba(0,0,0,0.3); padding: 15px 15px 15px 30px; border-radius: 8px;">
                 <li><strong>UAV (400 pts):</strong> Información básica de enemigos.</li>
-                <li><strong>UAV de Respuesta (600 pts):</strong> Ciega el mapa enemigo. Úsalo justo cuando ellos tiren su UAV.</li>
-                <li><strong>Torreta SAM (850 pts):</strong> Derriba automáticamente helicópteros y rachas aéreas enemigas. Esencial contra equipos organizados.</li>
+                <li><strong>UAV de Respuesta (600 pts):</strong> Ciega el mapa enemigo.</li>
+                <li><strong>Torreta SAM (850 pts):</strong> Derriba automáticamente helicópteros.</li>
             </ul>
 
             <h3 style="color: #ff4444;">2. El "Slayer" (Agresivo)</h3>
-            <p>Si eres el que más mata en el equipo, usa rachas letales de bajo coste para ciclar (repetir) las rachas varias veces por partida.</p>
+            <p>Si eres el que más mata en el equipo, usa rachas letales de bajo coste.</p>
             <ul style="background: rgba(0,0,0,0.3); padding: 15px 15px 15px 30px; border-radius: 8px;">
-                <li><strong>Coche de Conmoción (RC-XD):</strong> Paraliza a un enemigo cercano. Úsalo para ganar un duelo seguro.</li>
-                <li><strong>Misil Predador:</strong> Elimina objetivos agrupados en el punto o destruye tanques/Goliaths.</li>
-                <li><strong>Láser Orbital:</strong> La racha más potente de control de zona. Es indestructible y atraviesa techos. Colócalo sobre el Punto Caliente para ganar 20 segundos gratis.</li>
+                <li><strong>Coche de Conmoción (RC-XD):</strong> Paraliza a un enemigo cercano.</li>
+                <li><strong>Misil Predador:</strong> Elimina objetivos agrupados.</li>
+                <li><strong>Láser Orbital:</strong> Control de zona indestructible.</li>
             </ul>
         </article>
 
@@ -203,11 +299,11 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 9999; display: none; text-align: center; backdrop-filter: blur(10px);">
+    <div id="cookie-banner">
         <h3 style="color: #fff; margin-top: 0; font-family: 'Roboto', sans-serif;">🍪 Configuración de Cookies</h3>
         <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5;">
-            Usamos cookies propias y de terceros para mejorar tu experiencia, mostrar anuncios relevantes y analizar nuestro tráfico. 
-            Puedes consultar nuestra <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
+            Usamos cookies propias y de terceros para mejorar tu experiencia. 
+            <a href="privacidad.html" style="color: #ffaa00;">Política de Privacidad</a>.
         </p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
             <button onclick="rejectCookies()" style="background: transparent; border: 1px solid #555; color: #fff; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">
