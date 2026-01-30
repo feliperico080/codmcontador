@@ -31,7 +31,7 @@
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.9);
             --border: #333;
-            --danger: #ff4444; /* Color para errores */
+            --danger: #ff4444;
         }
 
         body {
@@ -46,7 +46,7 @@
             background-attachment: fixed;
         }
 
-        /* NAVEGACIÓN ACTUALIZADA */
+        /* NAVEGACIÓN */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -60,10 +60,10 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between; /* Separar logo de enlaces */
+            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-            flex-wrap: wrap; /* Para móviles */
+            flex-wrap: wrap;
         }
         .logo { 
             font-family: 'Black Ops One'; 
@@ -74,10 +74,7 @@
         }
         .logo span { color: var(--primary); }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+        .nav-links { display: flex; gap: 20px; }
         .nav-links a {
             color: #fff;
             text-decoration: none;
@@ -87,11 +84,8 @@
             font-family: 'Roboto', sans-serif;
             text-transform: uppercase;
         }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
-        /* MEDIA QUERY PARA MOVIL */
         @media (max-width: 768px) {
             .nav-content { flex-direction: column; gap: 15px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
@@ -113,7 +107,7 @@
             border-radius: 15px;
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         h1 {
@@ -164,6 +158,28 @@
         .number { display: block; font-family: 'Black Ops One'; font-size: 2.5rem; color: #fff; }
         .label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* ESTILOS DE LISTA DE ARTÍCULOS */
+        .latest-articles {
+            background: rgba(20,20,20,0.95);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .article-link {
+            display: block;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .article-link:last-child { border-bottom: none; }
+        .article-link:hover { background: rgba(255, 170, 0, 0.05); color: var(--primary); padding-left: 20px; }
+        .article-tag { font-size: 0.75rem; background: #333; padding: 2px 6px; border-radius: 3px; margin-right: 10px; color: #ccc; }
+
         /* INTEL DE TEMPORADA */
         .intel-box {
             background: var(--card-bg);
@@ -175,7 +191,6 @@
         .intel-title { font-family: 'Black Ops One'; color: #fff; margin-top: 0; display: flex; align-items: center; gap: 10px; }
         .intel-text { line-height: 1.6; color: #ccc; }
 
-        /* GRID DE TARJETAS */
         .nav-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,8 +208,6 @@
             border: 1px solid #444;
             transition: all 0.3s ease;
             text-align: center;
-            position: relative;
-            overflow: hidden;
             display: block;
         }
 
@@ -204,49 +217,14 @@
             box-shadow: 0 0 25px rgba(255, 170, 0, 0.4);
         }
 
-        .nav-card:hover .card-icon {
-            transform: scale(1.2);
-        }
+        .card-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; color: #fff; }
+        .card-title { font-family: 'Black Ops One'; font-size: 1.4rem; color: #ffaa00; display: block; margin-bottom: 10px; text-transform: uppercase; }
+        .card-desc { font-size: 0.95rem; color: #ffeebb; display: block; line-height: 1.4; }
 
-        .card-icon { 
-            font-size: 2.5rem; 
-            margin-bottom: 15px; 
-            display: block; 
-            transition: transform 0.3s;
-            text-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
-            color: #fff;
-        }
-
-        .card-title { 
-            font-family: 'Black Ops One'; 
-            font-size: 1.4rem; 
-            color: #ffaa00; 
-            display: block; 
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .card-desc { 
-            font-size: 0.95rem; 
-            color: #ffeebb;
-            display: block; 
-            line-height: 1.4;
-            font-weight: 500;
-        }
-
-        /* TEXTO SEO */
         .content-box {
-            text-align: left; 
-            color: #ccc; 
-            line-height: 1.8; 
-            font-size: 1rem; 
-            background: #111; 
-            padding: 30px; 
-            border-radius: 10px; 
-            border: 1px solid #333;
-            margin-bottom: 30px;
+            text-align: left; color: #ccc; line-height: 1.8; font-size: 1rem; 
+            background: #111; padding: 30px; border-radius: 10px; 
+            border: 1px solid #333; margin-bottom: 30px;
         }
 
         .ad-container {
@@ -254,36 +232,19 @@
             display: flex; align-items: center; justify-content: center; margin: 20px 0; color: #555; border-radius: 8px;
         }
 
-        /* FOOTER */
         footer {
-            background: #000;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-            font-size: 0.9rem;
-            color: #666;
+            background: #000; padding: 40px 20px; text-align: center; border-top: 1px solid #222; font-size: 0.9rem; color: #666;
         }
         footer a { color: #888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
         footer a:hover { color: var(--primary); }
 
         .report-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: 1px solid var(--danger);
-            border-radius: 5px;
-            color: var(--danger) !important;
-            font-weight: bold;
-            background: rgba(255, 68, 68, 0.05);
+            display: inline-block; margin-top: 20px; padding: 10px 20px;
+            border: 1px solid var(--danger); border-radius: 5px; color: var(--danger) !important;
+            font-weight: bold; background: rgba(255, 68, 68, 0.05);
             font-family: 'Black Ops One', sans-serif;
-            letter-spacing: 1px;
         }
-        .report-btn:hover {
-            background: var(--danger);
-            color: #000 !important;
-            box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
-            transform: scale(1.02);
-        }
+        .report-btn:hover { background: var(--danger); color: #000 !important; }
 
     </style>
 </head>
@@ -318,6 +279,27 @@
             </div>
         </div>
         
+        <div class="latest-articles">
+            <h3 style="color: #fff; font-family: 'Black Ops One'; margin-top: 0; border-bottom: 2px solid #ffaa00; padding-bottom: 15px;">📰 ÚLTIMAS PUBLICACIONES Y GUÍAS</h3>
+            
+            <a href="opinion-mg42.html" class="article-link">
+                <span class="article-tag" style="background: #ff4444; color: #fff;">OPINIÓN</span>
+                Adiós al Spam: Por qué el nerfeo de la MG42 salvará las Ranked
+            </a>
+            <a href="guia-br-blackout.html" class="article-link">
+                <span class="article-tag">GUÍA BR</span>
+                Dominando Blackout con la AK-47: La reina indiscutible
+            </a>
+            <a href="guia-hud-4dedos.html" class="article-link">
+                <span class="article-tag">TUTORIAL</span>
+                Cómo pasar de 2 a 4 dedos (HUD) y mejorar tu movimiento
+            </a>
+            <a href="analisis-pase-suministros.html" class="article-link">
+                <span class="article-tag">ANÁLISIS</span>
+                ¿Vale la pena gastar en el Pase de Suministros?
+            </a>
+        </div>
+
         <div style="background: rgba(20,20,20,0.95); padding: 25px; border-radius: 12px; border: 1px solid #ffaa00; margin-bottom: 40px; box-shadow: 0 0 15px rgba(255, 170, 0, 0.1);">
             <h2 style="font-family: 'Black Ops One'; color: #ffaa00; text-align: center; margin-top: 0;">CALCULADORA DE RECARGA</h2>
             <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Calcula cuánto dinero real necesitas para tus CP.</p>
@@ -349,12 +331,9 @@
             function calcularPrecio() {
                 const cp = document.getElementById('cpInput').value;
                 const rate = document.getElementById('currencySelect').value;
-                
                 if(cp > 0) {
-                    // Fórmula aproximada (CP * Tasa)
                     const costo = (cp * rate).toLocaleString(); 
                     const moneda = document.getElementById('currencySelect').options[document.getElementById('currencySelect').selectedIndex].text;
-                    
                     document.getElementById('resultado').style.display = 'block';
                     document.getElementById('resultado').innerHTML = `Costo Aprox: <span style="color: #ffaa00;">$${costo}</span> <span style="font-size: 0.8rem; color: #888;">(${moneda})</span>`;
                 }
@@ -363,45 +342,15 @@
 
         <div style="background: rgba(20,20,20,0.95); padding: 20px; border-radius: 12px; border: 1px solid #333; margin-top: 40px; margin-bottom: 40px;">
             <h2 style="font-family: 'Black Ops One'; color: #fff; text-align: center; margin-top: 0;">RANKING DE ARMAS (TIER LIST)</h2>
-            
             <style>
                 .tier-row { display: flex; margin-bottom: 10px; border-radius: 5px; overflow: hidden; }
                 .tier-label { width: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Black Ops One'; font-size: 1.5rem; color: #000; }
                 .tier-content { flex: 1; background: #1a1a1a; display: flex; align-items: center; padding: 10px; color: #fff; gap: 15px; flex-wrap: wrap; }
                 .weapon-tag { background: #333; padding: 5px 10px; border-radius: 4px; font-size: 0.9rem; border: 1px solid #555; }
             </style>
-
-            <div class="tier-row">
-                <div class="tier-label" style="background: #ff4444;">S</div>
-                <div class="tier-content">
-                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">DR-H</span>
-                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">HVK-30</span>
-                    <span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">Fennec</span>
-                    <span class="weapon-tag">Tundra</span>
-                </div>
-            </div>
-
-            <div class="tier-row">
-                <div class="tier-label" style="background: #ffaa00;">A</div>
-                <div class="tier-content">
-                    <span class="weapon-tag">Kilo 141</span>
-                    <span class="weapon-tag">Grau 5.56</span>
-                    <span class="weapon-tag">DL Q33</span>
-                    <span class="weapon-tag">QQ9</span>
-                    <span class="weapon-tag">Switchblade X9</span>
-                </div>
-            </div>
-
-            <div class="tier-row">
-                <div class="tier-label" style="background: #ffff00;">B</div>
-                <div class="tier-content">
-                    <span class="weapon-tag">M13</span>
-                    <span class="weapon-tag">CBR4</span>
-                    <span class="weapon-tag">Locus</span>
-                    <span class="weapon-tag">AK117</span>
-                </div>
-            </div>
-            
+            <div class="tier-row"><div class="tier-label" style="background: #ff4444;">S</div><div class="tier-content"><span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">DR-H</span><span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">HVK-30</span><span class="weapon-tag" style="color: #ffaa00; border-color: #ffaa00;">Fennec</span><span class="weapon-tag">Tundra</span></div></div>
+            <div class="tier-row"><div class="tier-label" style="background: #ffaa00;">A</div><div class="tier-content"><span class="weapon-tag">Kilo 141</span><span class="weapon-tag">Grau 5.56</span><span class="weapon-tag">DL Q33</span><span class="weapon-tag">QQ9</span><span class="weapon-tag">Switchblade X9</span></div></div>
+            <div class="tier-row"><div class="tier-label" style="background: #ffff00;">B</div><div class="tier-content"><span class="weapon-tag">M13</span><span class="weapon-tag">CBR4</span><span class="weapon-tag">Locus</span><span class="weapon-tag">AK117</span></div></div>
             <p style="text-align: center; color: #666; font-size: 0.8rem; margin-top: 10px;">Actualizado para la Temporada actual.</p>
         </div>
 
@@ -429,54 +378,36 @@
                 <span class="card-desc">Aprende a jugar como pro: Movimiento y Spawns.</span>
             </a>
         </div>
-<div style="margin-top: 40px; margin-bottom: 40px;">
-    <h2 style="font-family: 'Black Ops One'; color: #fff; text-align: center;">OPINIÓN DEL EXPERTO</h2>
-    
-    <a href="opinion-mg42.html" style="text-decoration: none;">
-        <div style="background: linear-gradient(45deg, #1a1a1a, #2a2a2a); border-left: 5px solid #ffaa00; padding: 30px; border-radius: 8px; transition: transform 0.3s; display: flex; flex-direction: column; gap: 10px; border: 1px solid #333;">
-            <span style="background: #ffaa00; color: #000; padding: 3px 8px; font-weight: bold; font-size: 0.8rem; width: fit-content; border-radius: 4px;">ANÁLISIS</span>
-            <h3 style="color: #fff; font-size: 1.5rem; margin: 0; font-family: 'Black Ops One';">Adiós al Spam: Por qué el nerfeo de la MG42 salvará las Ranked</h3>
-            <p style="color: #ccc; margin: 0; line-height: 1.5;">
-                Las notas del parche dicen una cosa, pero la realidad del juego es otra. Analizamos el fin de la era "Pay-to-win" y qué armas tomarán el trono esta semana.
-            </p>
-            <span style="color: #ffaa00; font-weight: bold; margin-top: 10px;">Leer artículo completo ➔</span>
+
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+            <a href="opinion-mg42.html" style="text-decoration: none;">
+                <div style="background: linear-gradient(45deg, #1a1a1a, #2a2a2a); border-left: 5px solid #ffaa00; padding: 30px; border-radius: 8px; transition: transform 0.3s; display: flex; flex-direction: column; gap: 10px; border: 1px solid #333;">
+                    <span style="background: #ffaa00; color: #000; padding: 3px 8px; font-weight: bold; font-size: 0.8rem; width: fit-content; border-radius: 4px;">RECOMENDADO</span>
+                    <h3 style="color: #fff; font-size: 1.5rem; margin: 0; font-family: 'Black Ops One';">Adiós al Spam: Por qué el nerfeo de la MG42 salvará las Ranked</h3>
+                    <p style="color: #ccc; margin: 0; line-height: 1.5;">
+                        Las notas del parche dicen una cosa, pero la realidad del juego es otra. Analizamos el fin de la era "Pay-to-win".
+                    </p>
+                    <span style="color: #ffaa00; font-weight: bold; margin-top: 10px;">Leer análisis completo ➔</span>
+                </div>
+            </a>
         </div>
-    </a>
-</div>
+
         <div class="content-box">
             <h2 style="color: #ffaa00; font-family: 'Black Ops One'; margin-top: 0;">Análisis y Herramientas para Call of Duty Mobile</h2>
-            
             <p style="color: #44ff44; font-weight: bold; font-size: 0.9rem; margin-top: -10px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
                 ✅ Última actualización: Enero 2026 | Estado: Confirmado para S11
             </p>
             <p>
                 Bienvenidos a <strong>CODM Contador</strong>, el portal de referencia para la comunidad hispana. Nuestra misión es centralizar la información dispersa sobre las actualizaciones de Activision y TiMi Studios, ofreciendo herramientas precisas como nuestro <strong>contador de temporada</strong> y guías de optimización.
             </p>
-
             <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">¿Cómo funciona el ciclo de temporadas en CODM?</h3>
             <p>
-                A diferencia de otros shooters móviles, Call of Duty Mobile opera bajo el horario UTC (Tiempo Universal Coordinado). Esto suele generar confusión en jugadores de Latinoamérica y España respecto a cuándo termina exactamente el Pase de Batalla o cuándo se reinicia el Rango de MJ y BR. 
-                <br><br>
-                Nuestra herramienta sincroniza tu hora local con los servidores globales, calculando el tiempo exacto restante para:
+                A diferencia de otros shooters móviles, Call of Duty Mobile opera bajo el horario UTC. Esto suele generar confusión en jugadores de Latinoamérica. Nuestra herramienta sincroniza tu hora local con los servidores globales.
             </p>
             <ul style="list-style-type: square; color: #ccc; margin-left: 20px;">
                 <li>El reinicio de la Serie de Rango (cada 2 meses).</li>
                 <li>El lanzamiento del nuevo Pase de Batalla (mensual).</li>
-                <li>La rotación de mapas y modos de juego destacados.</li>
             </ul>
-
-            <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">Meta Actual y Optimización de Armas</h3>
-            <p>
-                Entender el "Meta" (Most Effective Tactic Available) es crucial para subir a Leyenda. En nuestra sección de clases analizamos los parches de equilibrio de armas. Actualmente, el juego prioriza la movilidad y el tiempo de apuntado (ADS). 
-                Recomendamos revisar nuestras guías para armas de asalto y subfusiles, donde explicamos cómo el sistema de armero (Gunsmith) afecta el retroceso y la dispersión de bala.
-            </p>
-
-            <h3 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px;">Preguntas Frecuentes (FAQ)</h3>
-            <p><strong>¿Esta herramienta es oficial de Activision?</strong><br>
-            No, somos una plataforma desarrollada por fans para ayudar a la comunidad a planificar sus sesiones de juego y compras de CP (COD Points).</p>
-            
-            <p><strong>¿Cuándo se actualiza la información?</strong><br>
-            Nuestro sistema verifica las notas del parche oficiales y las filtraciones de la versión china y global cada 24 horas para asegurar que el contador sea preciso.</p>
         </div>
 
         <div style="text-align: center; margin-bottom: 40px;">
@@ -501,8 +432,6 @@
         </p>
         <div style="max-width: 800px; margin: 0 auto;">
             <p style="margin-bottom: 20px; font-weight: bold; color: #fff; font-size: 1.2rem; font-family: 'Black Ops One';">CODM CONTADOR</p>
-            <p style="margin-bottom: 20px;">Somos un sitio web creado por fans para fans. No estamos afiliados con Activision ni TiMi Studios. Nuestro propósito es informar y ayudar a la comunidad a mejorar su nivel de juego.</p>
-            
             <div style="border-top: 1px solid #333; padding-top: 20px;">
                 <a href="index.html">Inicio</a> | 
                 <a href="sobre.html">Sobre Nosotros</a> | 
@@ -513,18 +442,15 @@
             <a href="mailto:feliperico080@gmail.com?subject=Reporte%20Error%20Web%20CODM" class="report-btn">
                 ⚠ Reportar Error en la Página
             </a>
-
             <p style="margin-top: 20px; font-size: 0.8rem;">© 2025 CODM Contador. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
         const releaseDate = new Date("January 15, 2026 19:00:00").getTime();
-
         function updateTimer() {
             const now = new Date().getTime();
             const difference = releaseDate - now;
-
             if (difference < 0) {
                 document.querySelector(".countdown-grid").innerHTML = 
                     "<div style='grid-column: span 4; background: #222; padding: 20px; border: 2px solid #ffaa00; border-radius: 10px;'>" +
@@ -533,12 +459,10 @@
                     "</div>";
                 return;
             }
-
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
             document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
