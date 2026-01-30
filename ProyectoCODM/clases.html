@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meta Actual S11: Mejores Armas y Clases - CODM Contador</title>
-    
-    <meta name="description" content="Descubre el Meta de la Temporada 11 en Call of Duty Mobile. Las mejores clases para BP50, KRM-262, DR-H y Fennec para llegar a Leyenda.">
+    <meta name="description" content="Descubre el Meta de la Temporada 11 en Call of Duty Mobile. Las mejores clases para BP50, KRM-262, DR-H y Fennec.">
     <link rel="icon" href="favicon.png" type="image/png">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
@@ -21,9 +20,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
-            --primary: #ffaa00; /* Dorado */
-            --highlight: #00e5ff; /* Cian para negritas */
-            --text-light: #f5f5f5; /* Blanco casi puro para lectura */
+            --primary: #ffaa00;
+            --highlight: #00e5ff;
+            --text-light: #f5f5f5;
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.95);
             --border: #333;
@@ -42,44 +41,7 @@
             background-attachment: fixed;
         }
 
-        /* MEJORA DE LECTURA: Contenedor para el artículo de texto */
-        .readable-panel {
-            background: rgba(10, 10, 10, 0.9); /* Fondo oscuro para leer mejor */
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
-        }
-
-        /* Estilos de Tipografía mejorados */
-        h2, h3 {
-            font-family: 'Black Ops One', sans-serif;
-            color: var(--primary); /* Títulos en Dorado */
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 25px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
-
-        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.8rem; }
-        h3 { font-size: 1.4rem; color: #fff; border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 30px;}
-
-        p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--text-light); /* Texto blanco legible */
-            margin-bottom: 15px;
-        }
-
-        strong {
-            color: var(--highlight); /* Negritas en Cian */
-            font-weight: 700;
-        }
-
-        li { margin-bottom: 10px; line-height: 1.6; }
-
-        /* Resto de estilos originales */
+        /* --- ESTILOS DEL MENÚ UNIFICADO --- */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -92,11 +54,38 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
-        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.5rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            text-decoration: none;
+        }
         .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Media Query para móviles */
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+        }
+        /* ---------------------------------- */
 
         .container {
             max-width: 900px;
@@ -104,28 +93,30 @@
             padding: 0 20px;
         }
 
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0,0,0,0.8);
-            color: var(--primary);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid var(--primary);
-            font-weight: bold;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
+        .readable-panel {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+
+        h2, h3 {
             font-family: 'Black Ops One', sans-serif;
+            color: var(--primary);
             text-transform: uppercase;
-            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
-        .back-btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: translateX(-5px);
-        }
+
+        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; color: #fff; border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 30px;}
+
+        p { font-size: 1.05rem; line-height: 1.7; color: var(--text-light); margin-bottom: 15px; }
+        strong { color: var(--highlight); font-weight: 700; }
+        li { margin-bottom: 10px; line-height: 1.6; }
 
         .page-title {
             font-family: 'Black Ops One';
@@ -156,10 +147,7 @@
             margin-bottom: 30px;
             transition: transform 0.2s;
         }
-        
-        .loadout-card:hover {
-            border-color: var(--primary);
-        }
+        .loadout-card:hover { border-color: var(--primary); }
 
         .weapon-name {
             font-family: 'Black Ops One';
@@ -204,22 +192,9 @@
             border-radius: 8px;
         }
 
-        .attachment-item {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .slot {
-            font-size: 0.8rem;
-            color: #888;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        
-        .part {
-            color: #fff;
-            font-weight: 500;
-        }
+        .attachment-item { display: flex; flex-direction: column; }
+        .slot { font-size: 0.8rem; color: #888; text-transform: uppercase; font-weight: bold; }
+        .part { color: #fff; font-weight: 500; }
 
         .strategy-box {
             margin-top: 20px;
@@ -251,7 +226,6 @@
             letter-spacing: 1px;
         }
         .report-btn:hover { background: var(--danger); color: #000 !important; }
-
     </style>
 </head>
 <body>
@@ -259,12 +233,17 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="clases.html">Clases</a>
+                <a href="guias.html">Guías</a>
+                <a href="filtraciones.html">Filtraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
         </div>
     </nav>
 
     <div class="container">
-        <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
-        
         <h1 class="page-title">META ACTUAL: TEMPORADA 11</h1>
         <p class="intro-text">
             Analizamos los buffs y nerfs del último parche para traerte las configuraciones de armas (Gunsmith) más efectivas.
@@ -273,13 +252,13 @@
         <article class="readable-panel">
             <h2>Análisis del Meta: ¿Por qué la BP50 sigue dominando?</h2>
             
-            <p>Seamos sinceros: todos esperábamos que Activision nerfeara la <strong>BP50</strong> hasta el suelo en esta actualización. Pero, para sorpresa de muchos, el arma sigue siendo una bestia absoluta. He estado probando diferentes configuraciones en partidas de <strong>rango Leyenda</strong> durante los últimos tres días y la conclusión es clara: si no la usas, estás en desventaja.</p>
+            <p>Seamos sinceros: todos esperábamos que Activision nerfeara la <strong>BP50</strong> hasta el suelo en esta actualización (algo que se rumorea para la próxima temporada, revisa las <a href="filtraciones.html" style="color: var(--primary); text-decoration: none; border-bottom: 1px dashed var(--primary);">últimas filtraciones aquí</a>). Pero, para sorpresa de muchos, el arma sigue siendo una bestia absoluta.</p>
 
             <h3>¿Qué hace que esta arma esté rota?</h3>
             <p>El problema no es solo su cadencia. Lo que realmente la hace "Meta" es su versatilidad. A diferencia de una Fennec, la BP50 mantiene un <strong>TTK (Time To Kill)</strong> ridículamente bajo a medias distancias. Es básicamente un subfusil disfrazado de fusil de asalto.</p>
 
             <h3>La Clase Definitiva para Ranked</h3>
-            <p>Si quieres ganar puntos y subir, necesitas consistencia. Esta es la configuración que estoy usando para controlar los puntos calientes en mapas como Standoff y Raid:</p>
+            <p>Si quieres ganar puntos y subir, necesitas consistencia y buen posicionamiento. Si sientes que mueres mucho aunque tengas buena clase, te recomiendo leer nuestra <a href="guias.html" style="color: var(--primary); text-decoration: none; border-bottom: 1px dashed var(--primary);">Guía de Game Sense y Spawns</a>. Mientras tanto, usa esta configuración para mapas como Standoff:</p>
             
             <ul>
                 <li><strong>Cañón:</strong> Leroy 438mm Rapid (Clave para esa cadencia extra).</li>

@@ -3,86 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - CODM Contador</title>
-    <meta name="description" content="Conoce al equipo detrás de CODM Contador y nuestra misión de ayudar a la comunidad.">
+    <title>Quiénes Somos - La Historia de CODM Contador</title>
+    <meta name="description" content="Conoce la historia detrás de CODM Contador. Un proyecto creado por jugadores veteranos para ayudar a la comunidad a subir a Leyenda.">
     <link rel="icon" href="favicon.png" type="image/png">
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8770179257851686" crossorigin="anonymous"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
-        :root { --primary: #ffaa00; --dark: #0a0a0a; }
+        
+        :root { --primary: #ffaa00; --dark: #0a0a0a; --text-light: #f5f5f5; }
         
         body { 
             font-family: 'Roboto', sans-serif; 
             background-color: var(--dark); 
-            color: #ccc; 
+            color: var(--text-light); 
             margin: 0; 
             padding: 0;
             background-image: url('police-1282330_1280.jpg'); 
             background-size: cover; 
             background-attachment: fixed; 
+            background-position: center;
         }
 
-        /* NAVEGACIÓN GLOBAL */
-        .navbar {
-            background: rgba(0,0,0,0.95);
-            padding: 15px 0;
-            border-bottom: 2px solid var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            flex-wrap: wrap;
-        }
-        .logo { 
-            font-family: 'Black Ops One'; 
-            font-size: 1.5rem; 
-            color: #fff; 
-            text-transform: uppercase; 
-            text-decoration: none;
-        }
+        /* NAVBAR UNIFICADA */
+        .navbar { background: rgba(0,0,0,0.95); padding: 15px 0; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; }
+        .nav-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; flex-wrap: wrap; }
+        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
         .logo span { color: var(--primary); }
-
         .nav-links { display: flex; gap: 20px; }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            font-family: 'Roboto', sans-serif;
-            text-transform: uppercase;
-        }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; font-family: 'Roboto'; text-transform: uppercase; }
         .nav-links a:hover { color: var(--primary); }
-
-        /* Media Query para móviles */
-        @media (max-width: 768px) {
-            .nav-content { flex-direction: column; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
-        }
+        @media (max-width: 768px) { .nav-content { flex-direction: column; gap: 15px; } .nav-links { flex-wrap: wrap; justify-content: center; } }
 
         .container { 
             max-width: 800px; 
             margin: 40px auto; 
-            background: rgba(20,20,20,0.95); 
+            background: rgba(15, 15, 15, 0.95); 
             padding: 40px; 
             border-radius: 12px; 
             border: 1px solid #333; 
             margin-left: 20px; margin-right: 20px;
         }
-        @media (min-width: 840px) {
-            .container { margin-left: auto; margin-right: auto; }
+        @media (min-width: 840px) { .container { margin-left: auto; margin-right: auto; } }
+
+        h1 { font-family: 'Black Ops One'; color: var(--primary); text-align: center; font-size: 2.5rem; margin-bottom: 30px; }
+        h2 { font-family: 'Black Ops One'; color: #fff; border-left: 4px solid var(--primary); padding-left: 15px; margin-top: 40px; }
+        p { line-height: 1.8; color: #ccc; font-size: 1.05rem; }
+        
+        .signature-box {
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-style: italic;
+            color: #888;
         }
 
-        h1 { font-family: 'Black Ops One'; color: var(--primary); text-align: center; }
-        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: bold; }
-        li { margin-bottom: 10px; }
+        /* FOOTER */
+        footer { background: #000; padding: 40px 20px; text-align: center; border-top: 1px solid #222; margin-top: 60px; }
+        footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: var(--primary); }
     </style>
 </head>
 <body>
@@ -101,23 +81,37 @@
     </nav>
 
     <div class="container">
-        <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
-        <h1>SOBRE NOSOTROS</h1>
+        <h1>NUESTRA MISIÓN</h1>
         
-        <p>Bienvenido a <strong>CODM Contador</strong>, la plataforma líder en seguimiento de temporadas y análisis estratégico para la comunidad hispana de Call of Duty: Mobile.</p>
+        <p>Hola, bienvenido a <strong>CODM Contador</strong>.</p>
         
-        <h3>Nuestra Misión</h3>
-        <p>Nuestra misión es simple: proporcionar a los jugadores herramientas precisas y actualizadas para mejorar su rendimiento competitivo. Sabemos que en el camino a Leyenda, cada segundo y cada accesorio cuenta.</p>
+        <p>Si has llegado hasta aquí, probablemente eres como yo: un jugador apasionado de <em>Call of Duty: Mobile</em> que está cansado de la desinformación. Mi nombre es Felipe, y llevo jugando este título desde su lanzamiento global en octubre de 2019 (sí, yo también sobreviví al meta de la S36 y la Akimbo Fennec).</p>
+        
+        <h2>¿Por qué nace este proyecto?</h2>
+        <p>Durante años, noté un problema grave en la comunidad hispana: <strong>el clickbait</strong>. Muchos canales de YouTube y páginas web prometen "CP Gratis" o inventan fechas de actualización solo para ganar visitas. Eso me frustraba.</p>
+        
+        <p>Decidí crear <strong>CODM Contador</strong> con un objetivo claro: ofrecer <strong>herramientas reales y datos precisos</strong>. Sin mentiras.</p>
 
-        <h3>¿Qué hacemos?</h3>
-        <ul>
-            <li><strong>Monitoreo en Tiempo Real:</strong> Ofrecemos contadores exactos para el final de temporadas y pases de batalla.</li>
-            <li><strong>Análisis de Meta:</strong> Probamos exhaustivamente cada actualización para filtrar las armas más efectivas.</li>
-            <li><strong>Educación:</strong> Creamos guías tácticas para ayudar a los nuevos jugadores a dominar las mecánicas avanzadas.</li>
-        </ul>
+        <h2>Experiencia Real (E-E-A-T)</h2>
+        <p>Todo lo que lees en nuestras guías de <a href="clases.html" style="color:var(--primary);">Clases y Meta</a> no está escrito por una inteligencia artificial ni copiado de Wikipedia. Son configuraciones que yo mismo pruebo en partidas de Rango Leyenda (+10.000 puntos) cada temporada.</p>
+        <p>Mi compromiso es simple: si una clase no sirve para ganar en Ranked, no la publico.</p>
 
-        <h3>Compromiso de Calidad</h3>
-        <p>Nos comprometemos a mantener la información actualizada semanalmente, basándonos en las notas oficiales del parche de Activision y en pruebas de campo en partidas de Rango Leyenda.</p>
+        <h2>Transparencia Publicitaria</h2>
+        <p>Este sitio se mantiene gracias a los anuncios. Sin embargo, nos aseguramos de que la publicidad nunca interrumpa tu lectura ni sea engañosa. Queremos que tu experiencia sea limpia y útil.</p>
+
+        <div class="signature-box">
+            <p>Nos vemos en el lobby,</p>
+            <p><strong style="color: var(--primary);">Felipe Rico</strong><br>Fundador y Editor Jefe<br>CODM Contador</p>
+        </div>
     </div>
+
+    <footer>
+        <p>© 2025 CODM Contador - Fan Site no oficial.</p>
+        <p>
+            <a href="contacto.html">Contacto</a> | 
+            <a href="sobre.html">Sobre Nosotros</a> |
+            <a href="privacidad.html">Privacidad</a>
+        </p>
+    </footer>
 </body>
 </html>

@@ -20,8 +20,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
         
         :root {
-            --primary: #ffaa00; /* Dorado */
-            --highlight: #00e5ff; /* Cian para negritas */
+            --primary: #ffaa00;
+            --highlight: #00e5ff;
             --danger: #ff4444;
             --success: #44ff44;
             --dark: #0a0a0a;
@@ -41,7 +41,7 @@
             background-position: center;
         }
 
-        /* BARRA DE NAVEGACIÓN (OBLIGATORIO PARA ADSENSE) */
+        /* --- ESTILOS DEL MENÚ UNIFICADO --- */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -54,11 +54,38 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
-        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.5rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            text-decoration: none;
+        }
         .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Media Query para móviles */
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+        }
+        /* ---------------------------------- */
 
         .container {
             max-width: 900px;
@@ -69,7 +96,6 @@
             gap: 30px;
         }
 
-        /* PANEL DE LECTURA MEJORADO */
         .readable-panel {
             background: rgba(10, 10, 10, 0.9);
             padding: 30px;
@@ -97,10 +123,8 @@
         }
 
         p { line-height: 1.6; font-size: 1.05rem; color: #ddd; }
-        
         strong { color: var(--highlight); }
 
-        /* Estilos de las Tarjetas de Filtraciones */
         .header-box {
             background: var(--card-bg);
             padding: 30px;
@@ -119,7 +143,6 @@
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .leak-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 170, 0, 0.1);
@@ -167,24 +190,6 @@
         }
         .fill { height: 100%; display: block; }
 
-        .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            padding: 15px;
-            background: rgba(0,0,0,0.5);
-            border-radius: 50px;
-            border: 1px solid var(--primary);
-            transition: 0.3s;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .btn-back:hover { background: var(--primary); color: #000; }
-
         /* FOOTER */
         footer {
             background-color: #000 !important;
@@ -212,13 +217,18 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="clases.html">Clases</a>
+                <a href="guias.html">Guías</a>
+                <a href="filtraciones.html">Filtraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
         </div>
     </nav>
 
     <div class="container">
         
-        <a href="index.html" class="btn-back">⬅ Volver al Inicio</a>
-
         <article class="readable-panel">
             <h2>Filtraciones S12: ¿Vale la pena gastar en la próxima Mítica?</h2>
             
@@ -280,7 +290,10 @@
         <div class="leak-card">
             <span class="tag">GAMEPLAY</span>
             <h2 class="leak-title">Nerfeos y Buffs Esperados</h2>
-            <p>La comunidad competitiva ha pedido cambios drásticos. Se espera un <strong>nerfeo a la BP50</strong> (reducción de alcance) y una mejora significativa a las escopetas en Battle Royale.</p>
+            <p>La comunidad competitiva ha pedido cambios drásticos. Se espera un <strong>nerfeo a la BP50</strong> (reducción de alcance) en el próximo parche.</p>
+            <p>
+                <em>Recomendación:</em> Aprovecha y sube de rango con ella ahora mismo usando nuestra <a href="clases.html" style="color: #ffaa00; text-decoration: none; border-bottom: 1px dashed #ffaa00; font-weight: bold;">Mejor Clase de BP50</a> antes de que le bajen las estadísticas.
+            </p>
             <div class="reliability">
                 Fiabilidad: <span style="color: var(--success)">90%</span>
                 <div class="meter"><span class="fill" style="width: 90%; background: var(--success);"></span></div>

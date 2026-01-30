@@ -20,8 +20,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700&display=swap');
 
         :root {
-            --primary: #ffaa00; /* Dorado */
-            --highlight: #00e5ff; /* Cian */
+            --primary: #ffaa00;
+            --highlight: #00e5ff;
             --dark: #0a0a0a;
             --card-bg: rgba(20, 20, 20, 0.95);
             --danger: #ff4444;
@@ -40,7 +40,7 @@
             background-position: center;
         }
 
-        /* NAVBAR */
+        /* --- ESTILOS DEL MENÚ UNIFICADO --- */
         .navbar {
             background: rgba(0,0,0,0.95);
             padding: 15px 0;
@@ -53,11 +53,38 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
-        .logo { font-family: 'Black Ops One'; font-size: 1.5rem; color: #fff; text-decoration: none; }
+        .logo { 
+            font-family: 'Black Ops One'; 
+            font-size: 1.5rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            text-decoration: none;
+        }
         .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Media Query para móviles */
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+        }
+        /* ---------------------------------- */
 
         .container {
             max-width: 900px;
@@ -65,31 +92,6 @@
             padding: 0 20px;
         }
 
-        /* BOTÓN VOLVER */
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0,0,0,0.8);
-            color: var(--primary);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid var(--primary);
-            font-weight: bold;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            font-family: 'Black Ops One', sans-serif;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-        .back-btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: translateX(-5px);
-        }
-
-        /* PANEL DE LECTURA (TEXTO LARGO) */
         .readable-panel {
             background: rgba(10, 10, 10, 0.9);
             padding: 30px;
@@ -99,20 +101,17 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.7);
         }
 
-        /* TARJETAS DE GUÍAS TÉCNICAS */
         .guide-article {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 30px;
             border-left: 4px solid var(--primary);
-            border: 1px solid #333; /* Borde sutil alrededor */
-            border-left-width: 4px; /* Mantener el borde izquierdo grueso */
+            border: 1px solid #333;
             transition: transform 0.2s;
         }
         .guide-article:hover { transform: translateX(5px); }
 
-        /* TIPOGRAFÍA */
         h1 { 
             font-family: 'Black Ops One'; 
             font-size: 2.5rem; 
@@ -143,7 +142,7 @@
         strong { color: var(--highlight); }
 
         .tip-box {
-            background: rgba(0, 229, 255, 0.1); /* Fondo azulado muy suave */
+            background: rgba(0, 229, 255, 0.1);
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
@@ -184,12 +183,17 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">CODM <span>CONTADOR</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="clases.html">Clases</a>
+                <a href="guias.html">Guías</a>
+                <a href="filtraciones.html">Filtraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
         </div>
     </nav>
 
     <div class="container">
-        <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
-
         <h1>ACADEMIA & MENTALIDAD</h1>
 
         <article class="readable-panel">
@@ -202,10 +206,10 @@
 
             <h3>Domina las rotaciones en Punto Caliente</h3>
             <p>Este es el consejo que te cambiará la vida: <strong>Deja de pelear por el punto cuando faltan 10 segundos.</strong> Es inútil. Si el punto actual está perdido y queda poco tiempo, tu trabajo no es ir a morir allí. Tu trabajo es correr al SIGUIENTE punto y asegurar la posición.</p>
-            <p>Si llegas al nuevo punto 15 segundos antes que el enemigo, puedes poner tus trophys, tomar una buena posición detrás de un headglitch y esperarlos. Ellos vendrán corriendo desesperados y tú tendrás toda la ventaja. Ganar en Hardpoint es <strong>80% posición y 20% disparos.</strong></p>
+            <p>Si llegas al nuevo punto 15 segundos antes que el enemigo, puedes poner tus trophys, tomar una buena posición y esperarlos. Ganar en Hardpoint es <strong>80% posición y 20% disparos.</strong></p>
 
             <h3>Configuración de sensibilidad: ¿Alta o Baja?</h3>
-            <p>No copies la sensibilidad de los youtubers famosos. Ellos juegan en iPad con 6 dedos. Si juegas en celular con pulgares, necesitas encontrar tu propio equilibrio. Mi recomendación para empezar:</p>
+            <p>No copies la sensibilidad de los youtubers famosos que juegan en iPad. Si juegas en celular, necesitas encontrar tu propio equilibrio. Esto es vital para controlar el retroceso de armas meta como la <a href="clases.html" style="color: var(--primary); text-decoration: none; border-bottom: 1px dashed var(--primary);">BP50 o la Fennec (ver clases aquí)</a>.</p>
             <ul>
                 <li>Baja la <strong>sensibilidad de cámara</strong> (estándar) para poder girar 180 grados con un solo deslizamiento de dedo.</li>
                 <li>Baja la <strong>sensibilidad de apuntado (ADS)</strong> para tener precisión a largas distancias.</li>
@@ -277,7 +281,6 @@
                 <li><strong>Láser Orbital:</strong> Control de zona indestructible.</li>
             </ul>
         </article>
-
     </div>
 
     <footer>
